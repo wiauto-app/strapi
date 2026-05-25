@@ -19,6 +19,11 @@
     },
     "comentario": {
       "type": "string"
+    },
+    "noticia": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::noticia.noticia"
     }
   }
 }

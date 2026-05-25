@@ -17,7 +17,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "nombre"
+      "targetField": "nombre",
+      "required": true
     },
     "description": {
       "type": "blocks"
