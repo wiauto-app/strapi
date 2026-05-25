@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_home_app_advertisments",
+  "info": {
+    "displayName": "appAdvertisment"
+  },
+  "options": {},
+  "attributes": {
+    "appMockup": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "phrase": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "googleLabel": {
+      "type": "blocks"
+    },
+    "appleLabel": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

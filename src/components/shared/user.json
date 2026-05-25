@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_users",
+  "info": {
+    "displayName": "user"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticia_prensas",
+  "info": {
+    "singularName": "noticia-prensa",
+    "pluralName": "noticia-prensas",
+    "displayName": "noticia_prensa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "resumen": {
+      "type": "text",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "fecha_publicacion": {
+      "type": "datetime",
+      "required": true
+    },
+    "destacada": {
+      "type": "boolean"
+    },
+    "publicado_por": {
+      "type": "component",
+      "component": "shared.user",
+      "repeatable": false
+    },
+    "tiempo_lectura": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

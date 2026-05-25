@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_noticias",
+  "info": {
+    "singularName": "categoria-noticia",
+    "pluralName": "categoria-noticias",
+    "displayName": "categoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

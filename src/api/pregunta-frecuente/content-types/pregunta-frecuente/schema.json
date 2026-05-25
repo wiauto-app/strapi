@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pregunta_frecuentes",
+  "info": {
+    "singularName": "pregunta-frecuente",
+    "pluralName": "pregunta-frecuentes",
+    "displayName": "pregunta_frecuente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pregunta": {
+      "type": "string"
+    },
+    "respuesta": {
+      "type": "blocks"
+    }
+  }
+}

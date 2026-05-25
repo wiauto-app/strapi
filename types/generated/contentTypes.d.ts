@@ -430,33 +430,61 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
+export interface ApiCategoriaNoticiaCategoriaNoticia
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'categoria_noticias';
   info: {
-    displayName: 'article';
-    pluralName: 'articles';
-    singularName: 'article';
+    displayName: 'categoria';
+    pluralName: 'categoria-noticias';
+    singularName: 'categoria-noticia';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
-    cover_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::article.article'
+      'api::categoria-noticia.categoria-noticia'
     > &
       Schema.Attribute.Private;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'nombre'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
+  collectionName: 'comentarios';
+  info: {
+    displayName: 'comentario';
+    pluralName: 'comentarios';
+    singularName: 'comentario';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comentario: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -486,6 +514,152 @@ export interface ApiCookiesPolicyCookiesPolicy extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    homeAppAdvertisment: Schema.Attribute.Component<
+      'home.app-advertisment',
+      false
+    >;
+    homeFeatures: Schema.Attribute.Component<'home.features-section', false>;
+    homeHero: Schema.Attribute.Component<'home.hero', false>;
+    homeNewsletter: Schema.Attribute.Component<'home.newsletter', false>;
+    homeSeo: Schema.Attribute.Component<'shared.seo', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoticiaPrensaNoticiaPrensa
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'noticia_prensas';
+  info: {
+    displayName: 'noticia_prensa';
+    pluralName: 'noticia-prensas';
+    singularName: 'noticia-prensa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destacada: Schema.Attribute.Boolean;
+    fecha_publicacion: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    imagen: Schema.Attribute.Media<'files' | 'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::noticia-prensa.noticia-prensa'
+    > &
+      Schema.Attribute.Private;
+    publicado_por: Schema.Attribute.Component<'shared.user', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    resumen: Schema.Attribute.Text & Schema.Attribute.Required;
+    tiempo_lectura: Schema.Attribute.String;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
+  collectionName: 'noticias';
+  info: {
+    displayName: 'noticia';
+    pluralName: 'noticias';
+    singularName: 'noticia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    categoria_noticia: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::categoria-noticia.categoria-noticia'
+    >;
+    citacion: Schema.Attribute.Text;
+    comentarios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    >;
+    contenido: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destacada: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::noticia.noticia'
+    > &
+      Schema.Attribute.Private;
+    publicado_por: Schema.Attribute.Component<'shared.user', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    resumen: Schema.Attribute.Text & Schema.Attribute.Required;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'titulo'>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPreguntaFrecuentePreguntaFrecuente
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pregunta_frecuentes';
+  info: {
+    displayName: 'pregunta_frecuente';
+    pluralName: 'pregunta-frecuentes';
+    singularName: 'pregunta-frecuente';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pregunta-frecuente.pregunta-frecuente'
+    > &
+      Schema.Attribute.Private;
+    pregunta: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    respuesta: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1062,8 +1236,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::article.article': ApiArticleArticle;
+      'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
+      'api::comentario.comentario': ApiComentarioComentario;
       'api::cookies-policy.cookies-policy': ApiCookiesPolicyCookiesPolicy;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
+      'api::noticia.noticia': ApiNoticiaNoticia;
+      'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'plugin::content-releases.release': PluginContentReleasesRelease;

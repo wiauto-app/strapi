@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_icon_features",
+  "info": {
+    "displayName": "icon_feature"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}
