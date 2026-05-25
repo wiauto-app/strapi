@@ -1,61 +1,123 @@
-# 🚀 Getting started with Strapi
+# WiAuto Content (Strapi)
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+CMS headless del proyecto WiAuto. Gestiona homepage, noticias, comentarios, políticas legales y el resto del contenido consumido por el frontend Next.js.
 
-### `develop`
+- **Panel de administración:** `http://localhost:1337/admin`
+- **API REST:** `http://localhost:1337/api`
+- **Base de datos:** SQLite (por defecto)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+## Requisitos
 
+- Node.js 20+
+- npm, yarn o pnpm
+
+## Configuración inicial
+
+1. Instala dependencias:
+
+```bash
+npm install
 ```
+
+2. Crea el archivo de entorno a partir del ejemplo:
+
+```bash
+cp .env.example .env
+```
+
+3. Genera valores seguros para las claves de `.env` (`APP_KEYS`, `JWT_SECRET`, etc.) antes de usar el proyecto en un entorno compartido.
+
+## Base de datos (SQLite)
+
+Strapi lee la base de datos desde **`.tmp/data.db`** (ver `config/database.ts`). En la raíz del proyecto se guarda una copia de respaldo o de referencia en **`data.db`**.
+
+### Usar tus datos existentes
+
+**Detén Strapi** antes de copiar el archivo (si está en ejecución, la copia puede quedar corrupta).
+
+Desde la raíz de este proyecto (`strapi/`):
+
+```bash
+mkdir -p .tmp
+cp data.db .tmp/data.db
+```
+
+En macOS o Linux también puedes usar:
+
+```bash
+npm run db:sync
+```
+
+Ese script crea `.tmp` si no existe y copia `data.db` → `.tmp/data.db`.
+
+> **Nota:** La carpeta `.tmp` está en `.gitignore`. El archivo `data.db` de la raíz sí puede versionarse si el equipo lo acuerda; cada desarrollador debe ejecutar la copia local tras clonar o actualizar `data.db`.
+
+### Base de datos vacía
+
+Si no tienes `data.db` en la raíz, al arrancar Strapi se creará `.tmp/data.db` automáticamente. Tendrás que completar el registro del primer usuario admin en el panel.
+
+## Comandos
+
+### Desarrollo (recomendado)
+
+Inicia Strapi con recarga automática del código y del panel admin:
+
+```bash
 npm run develop
-# or
-yarn develop
 ```
 
-### `start`
+### Producción local
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+Compila el panel y arranca sin recarga:
 
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
+```bash
 npm run build
-# or
-yarn build
+npm run start
 ```
 
-## ⚙️ Deployment
+### Sincronizar base de datos
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Copia `data.db` de la raíz a `.tmp/data.db`:
 
+```bash
+npm run db:sync
 ```
-yarn strapi deploy
+
+## Integración con el frontend
+
+El proyecto Next.js (`wiauto-frontend`) consume esta API. En su `.env`:
+
+```env
+NEXT_PUBLIC_STRAPI_URL=http://localhost:1337
+STRAPI_TOKEN=<token_de_api_con_permisos>
 ```
 
-## 📚 Learn more
+Crea el token en **Settings → API Tokens** y asigna permisos a los content-types que expongas (`noticia`, `comentario`, `homepage`, etc.).
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+## Permisos de la API
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+Para desarrollo, revisa en el admin:
 
-## ✨ Community
+- **Settings → Users & Permissions → Roles → Public** (lectura pública si aplica)
+- **Settings → API Tokens** (token para el servidor Next.js)
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Los comentarios y noticias con **Draft & Publish** solo aparecen en la API cuando están **publicados**.
 
----
+## Estructura relevante
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+| Ruta | Descripción |
+|------|-------------|
+| `src/api/` | Content-types y controladores |
+| `src/components/` | Componentes reutilizables (SEO, home, etc.) |
+| `config/database.ts` | Configuración de SQLite / otras BD |
+| `data.db` | Copia de referencia de la base de datos |
+| `.tmp/data.db` | Archivo que usa Strapi en tiempo de ejecución |
+
+## Despliegue
+
+Opciones oficiales: [documentación de despliegue de Strapi](https://docs.strapi.io/dev-docs/deployment). Para producción conviene migrar a PostgreSQL o MySQL en lugar de SQLite.
+
+## Documentación
+
+- [Documentación de Strapi](https://docs.strapi.io)
+- [CLI de Strapi](https://docs.strapi.io/dev-docs/cli)
