@@ -16,10 +16,8 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "docker:dev": "docker compose -f dev.yml up --build",
     "docker:dev:down": "docker compose -f dev.yml down",
-    "docker:prod": "docker compose -f docker-compose.prod.yml up --build -d",
-    "docker:prod:down": "docker compose -f docker-compose.prod.yml down",
-    "docker:prod:dokploy": "docker compose up --build -d",
-    "docker:prod:dokploy:down": "docker compose down"
+    "docker:prod": "docker compose up --build -d",
+    "docker:prod:down": "docker compose down"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.44.0",

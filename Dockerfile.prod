@@ -10,9 +10,10 @@ ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
 COPY . .
-# Sin esto, el admin apunta a localhost:1337. En Dokploy, pasar PUBLIC_URL como build arg.
-ARG STRAPI_ADMIN_BACKEND_URL
-ENV STRAPI_ADMIN_BACKEND_URL=${STRAPI_ADMIN_BACKEND_URL}
+# Uncomment the following lines to set the admin panel URL at build time.
+# Without this, the admin panel defaults to localhost:1337.
+# ARG STRAPI_ADMIN_BACKEND_URL
+# ENV STRAPI_ADMIN_BACKEND_URL=${STRAPI_ADMIN_BACKEND_URL}
 ENV NODE_ENV=production
 RUN npm run build
 
@@ -23,7 +24,7 @@ ENV NODE_ENV=production
 
 WORKDIR /opt/
 COPY --from=build /opt/package.json /opt/package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev && npm cache clean --force  # --omit=dev replaces the deprecated --only=production
 ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
