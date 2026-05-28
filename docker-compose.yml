@@ -1,12 +1,10 @@
-# Producción con Dockploy: asignar dominio en UI → Domains → service strapi, port 1337
+# Producción: docker compose up --build -d
 services:
   strapi:
     container_name: strapi-prod
     build:
       context: .
       dockerfile: Dockerfile.prod
-      args:
-        STRAPI_ADMIN_BACKEND_URL: ${STRAPI_ADMIN_BACKEND_URL}
     image: strapi:prod
     restart: unless-stopped
     env_file: .env
@@ -14,8 +12,6 @@ services:
       NODE_ENV: production
       HOST: 0.0.0.0
       PUBLIC_URL: ${PUBLIC_URL}
-      SERVER_PROXY: ${SERVER_PROXY:-true}
-      CORS_ORIGINS: ${CORS_ORIGINS}
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
       DATABASE_PORT: 5432
@@ -35,7 +31,6 @@ services:
     expose:
       - "1337"
     networks:
-      - dokploy-network
       - strapi-network
     depends_on:
       strapiDB:
@@ -66,7 +61,5 @@ volumes:
   strapi-uploads-prod:
 
 networks:
-  dokploy-network:
-    external: true
   strapi-network:
     driver: bridge

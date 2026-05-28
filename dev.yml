@@ -11,9 +11,6 @@ services:
     environment:
       NODE_ENV: development
       HOST: 0.0.0.0
-      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:1337}
-      SERVER_PROXY: ${SERVER_PROXY:-false}
-      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
       DATABASE_PORT: 5432
