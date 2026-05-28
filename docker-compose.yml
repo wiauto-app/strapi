@@ -11,6 +11,7 @@ services:
     environment:
       NODE_ENV: production
       HOST: 0.0.0.0
+      PUBLIC_URL: ${PUBLIC_URL}
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
       DATABASE_PORT: 5432
