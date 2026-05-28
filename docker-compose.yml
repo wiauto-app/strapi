@@ -5,12 +5,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
+      args:
+        PUBLIC_URL: ${PUBLIC_URL}
+        STRAPI_ADMIN_BACKEND_URL: ${PUBLIC_URL}
     image: strapi:prod
     restart: unless-stopped
     env_file: .env
     environment:
       NODE_ENV: production
       HOST: 0.0.0.0
+      PUBLIC_URL: ${PUBLIC_URL}
+      PROXY: "true"
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
       DATABASE_PORT: 5432
