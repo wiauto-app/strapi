@@ -1,4 +1,5 @@
-# Producción (Dokploy): docker compose up --build -d
+# Producción en Dokploy (Traefik enruta al contenedor)
+# Uso: docker compose up --build -d
 services:
   strapi:
     container_name: strapi-prod
@@ -6,10 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile.prod
       args:
-        PUBLIC_URL: ${PUBLIC_URL}
         STRAPI_ADMIN_BACKEND_URL: ${PUBLIC_URL}
     image: strapi:prod
-    restart: unless-stopped
+    restart: always
     env_file: .env
     environment:
       NODE_ENV: production
@@ -32,11 +32,10 @@ services:
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
     volumes:
       - strapi-uploads-prod:/opt/app/public/uploads
-    # No publicar puertos en el host: Dokploy/Traefik enruta por red interna
     expose:
       - "1337"
     networks:
-      - strapi-network
+      - strapi
       - dokploy-network
     labels:
       - traefik.docker.network=dokploy-network
@@ -45,9 +44,9 @@ services:
         condition: service_healthy
 
   strapiDB:
-    image: postgres:18
     container_name: strapiDB-prod
-    restart: unless-stopped
+    image: postgres:18
+    restart: always
     env_file: .env
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
@@ -56,20 +55,20 @@ services:
     volumes:
       - strapi-data-prod:/var/lib/postgresql
     networks:
-      - strapi-network
+      - strapi
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
-      interval: 5s
+      interval: 10s
       timeout: 5s
-      retries: 10
-      start_period: 10s
+      retries: 5
 
 volumes:
   strapi-data-prod:
   strapi-uploads-prod:
 
 networks:
-  strapi-network:
+  strapi:
+    name: strapi-prod
     driver: bridge
   dokploy-network:
     external: true

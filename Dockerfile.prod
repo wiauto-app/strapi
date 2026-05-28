@@ -10,10 +10,8 @@ ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
 COPY . .
-# URL pública del backend (Dokploy / reverse proxy). Obligatoria en producción.
-ARG PUBLIC_URL
+# Sin esto, el admin apunta a localhost:1337. En Dokploy, pasar PUBLIC_URL como build arg.
 ARG STRAPI_ADMIN_BACKEND_URL
-ENV PUBLIC_URL=${PUBLIC_URL}
 ENV STRAPI_ADMIN_BACKEND_URL=${STRAPI_ADMIN_BACKEND_URL}
 ENV NODE_ENV=production
 RUN npm run build
@@ -25,7 +23,7 @@ ENV NODE_ENV=production
 
 WORKDIR /opt/
 COPY --from=build /opt/package.json /opt/package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force  # --omit=dev replaces the deprecated --only=production
+RUN npm ci --omit=dev && npm cache clean --force
 ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
