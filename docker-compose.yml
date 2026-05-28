@@ -30,6 +30,8 @@ services:
       - strapi-uploads-prod:/opt/app/public/uploads
     expose:
       - "1337"
+    ports:
+      - "${PORT:-1337}:1337"
     networks:
       - strapi-network
       - dokploy-network
