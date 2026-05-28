@@ -16,7 +16,7 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "docker:dev": "docker compose -f dev.yml up --build",
     "docker:dev:down": "docker compose -f dev.yml down",
-    "docker:prod": "docker compose up --build -d",
+    "docker:prod": "docker compose --env-file .env.production up --build -d",
     "docker:prod:down": "docker compose down"
   },
   "dependencies": {
