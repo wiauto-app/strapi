@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
+      args:
+        STRAPI_ADMIN_BACKEND_URL: https://strapi.wiauto.es
     image: strapi:prod
     restart: unless-stopped
     env_file: .env
