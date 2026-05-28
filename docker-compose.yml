@@ -1,4 +1,4 @@
-# Producción: docker compose up --build -d
+# Producción (Dokploy): docker compose up --build -d
 services:
   strapi:
     container_name: strapi-prod
@@ -32,10 +32,14 @@ services:
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
     volumes:
       - strapi-uploads-prod:/opt/app/public/uploads
-    ports:
-      - "${PORT:-1337}:1337"
+    # No publicar puertos en el host: Dokploy/Traefik enruta por red interna
+    expose:
+      - "1337"
     networks:
       - strapi-network
+      - dokploy-network
+    labels:
+      - traefik.docker.network=dokploy-network
     depends_on:
       strapiDB:
         condition: service_healthy
@@ -67,3 +71,5 @@ volumes:
 networks:
   strapi-network:
     driver: bridge
+  dokploy-network:
+    external: true
