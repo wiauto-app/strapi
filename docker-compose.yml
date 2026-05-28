@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile.prod
       args:
         STRAPI_ADMIN_BACKEND_URL: https://strapi.wiauto.es
+        SERVER_PROXY: true
     image: strapi:prod
     restart: unless-stopped
     env_file: .env
