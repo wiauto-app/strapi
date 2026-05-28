@@ -12,8 +12,8 @@ WORKDIR /opt/app
 COPY . .
 # Uncomment the following lines to set the admin panel URL at build time.
 # Without this, the admin panel defaults to localhost:1337.
-ARG STRAPI_ADMIN_BACKEND_URL
-ENV STRAPI_ADMIN_BACKEND_URL=${STRAPI_ADMIN_BACKEND_URL}
+# ARG STRAPI_ADMIN_BACKEND_URL
+ENV STRAPI_ADMIN_BACKEND_URL=https://strapi.wiauto.es
 ENV NODE_ENV=production
 RUN npm run build
 
