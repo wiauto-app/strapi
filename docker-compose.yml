@@ -1,0 +1,64 @@
+# Producción: docker compose up --build -d
+services:
+  strapi:
+    container_name: strapi-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: strapi:prod
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapiDB
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_SSL: ${DATABASE_SSL:-false}
+      DATABASE_SCHEMA: ${DATABASE_SCHEMA:-public}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+    volumes:
+      - strapi-uploads-prod:/opt/app/public/uploads
+    ports:
+      - "${PORT:-1337}:1337"
+    networks:
+      - strapi-network
+    depends_on:
+      strapiDB:
+        condition: service_healthy
+
+  strapiDB:
+    image: postgres:18
+    container_name: strapiDB-prod
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - strapi-data-prod:/var/lib/postgresql
+    networks:
+      - strapi-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  strapi-data-prod:
+  strapi-uploads-prod:
+
+networks:
+  strapi-network:
+    driver: bridge
