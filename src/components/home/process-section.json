@@ -6,7 +6,7 @@
   "options": {},
   "attributes": {
     "titulo": {
-      "type": "string"
+      "type": "blocks"
     },
     "tabs": {
       "type": "component",

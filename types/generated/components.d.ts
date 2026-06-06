@@ -61,7 +61,7 @@ export interface HomeProcessSection extends Struct.ComponentSchema {
   };
   attributes: {
     tabs: Schema.Attribute.Component<'home.process-section-tabs', true>;
-    titulo: Schema.Attribute.String;
+    titulo: Schema.Attribute.Blocks;
   };
 }
 
@@ -71,10 +71,10 @@ export interface HomeProcessSectionTabs extends Struct.ComponentSchema {
     displayName: 'process_section_tabs';
   };
   attributes: {
-    description: Schema.Attribute.Blocks;
+    descripcion: Schema.Attribute.Blocks;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     tab: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    titulo: Schema.Attribute.String;
   };
 }
 

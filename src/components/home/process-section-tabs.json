@@ -8,10 +8,10 @@
     "tab": {
       "type": "string"
     },
-    "title": {
+    "titulo": {
       "type": "string"
     },
-    "description": {
+    "descripcion": {
       "type": "blocks"
     },
     "image": {
