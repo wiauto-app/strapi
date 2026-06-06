@@ -36,7 +36,7 @@
       "component": "home.newsletter",
       "repeatable": false
     },
-    "process_section": {
+    "processSection": {
       "type": "component",
       "component": "home.process-section",
       "repeatable": false
