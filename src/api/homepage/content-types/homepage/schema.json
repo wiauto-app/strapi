@@ -35,6 +35,11 @@
       "type": "component",
       "component": "home.newsletter",
       "repeatable": false
+    },
+    "process_section": {
+      "type": "component",
+      "component": "home.process-section",
+      "repeatable": false
     }
   }
 }

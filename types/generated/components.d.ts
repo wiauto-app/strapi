@@ -54,6 +54,30 @@ export interface HomeNewsletter extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeProcessSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_process_sections';
+  info: {
+    displayName: 'process_section';
+  };
+  attributes: {
+    tabs: Schema.Attribute.Component<'home.process-section-tabs', true>;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface HomeProcessSectionTabs extends Struct.ComponentSchema {
+  collectionName: 'components_home_process_section_tabs';
+  info: {
+    displayName: 'process_section_tabs';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tab: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedIconFeature extends Struct.ComponentSchema {
   collectionName: 'components_shared_icon_features';
   info: {
@@ -112,6 +136,8 @@ declare module '@strapi/strapi' {
       'home.features-section': HomeFeaturesSection;
       'home.hero': HomeHero;
       'home.newsletter': HomeNewsletter;
+      'home.process-section': HomeProcessSection;
+      'home.process-section-tabs': HomeProcessSectionTabs;
       'shared.icon-feature': SharedIconFeature;
       'shared.link': SharedLink;
       'shared.seo': SharedSeo;

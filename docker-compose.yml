@@ -31,20 +31,11 @@ services:
     expose:
       - "1337"
     ports:
-      - "${PORT:-1337}:1337"
+      - "1337:1337"
     networks:
       - strapi-network
       - dokploy-network
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=dokploy-network"
-      # Configuración del Enrutador (Router)
-      - "traefik.http.routers.strapi-prod.rule=Host(`strapi.wiauto.es`)"
-      - "traefik.http.routers.strapi-prod.entrypoints=websecure"
-      - "traefik.http.routers.strapi-prod.tls=true"
-      - "traefik.http.routers.strapi-prod.tls.certresolver=letsencrypt" # O el nombre del resolver que use Dokploy
-      # Configuración del Servicio (Service) - Indica el puerto interno de Strapi
-      - "traefik.http.services.strapi-prod.loadbalancer.server.port=1337"
+
     depends_on:
       strapiDB:
         condition: service_healthy
