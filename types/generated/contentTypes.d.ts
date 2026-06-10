@@ -492,35 +492,6 @@ export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCookiesPolicyCookiesPolicy extends Struct.SingleTypeSchema {
-  collectionName: 'cookies_policies';
-  info: {
-    displayName: 'cookies-policy';
-    pluralName: 'cookies-policies';
-    singularName: 'cookies-policy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::cookies-policy.cookies-policy'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -638,6 +609,94 @@ export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaginaCookiePaginaCookie extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_cookies';
+  info: {
+    displayName: 'pagina cookie';
+    pluralName: 'pagina-cookies';
+    singularName: 'pagina-cookie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenido: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-cookie.pagina-cookie'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPoliticaPaginaPolitica
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_politicas';
+  info: {
+    displayName: 'pagina politica';
+    pluralName: 'pagina-politicas';
+    singularName: 'pagina-politica';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenido: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-politica.pagina-politica'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaTerminoPaginaTermino extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_terminos';
+  info: {
+    displayName: 'pagina termino';
+    pluralName: 'pagina-terminos';
+    singularName: 'pagina-termino';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenido: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-termino.pagina-termino'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlanPlan extends Struct.SingleTypeSchema {
   collectionName: 'plans';
   info: {
@@ -694,35 +753,6 @@ export interface ApiPreguntaFrecuentePreguntaFrecuente
   };
 }
 
-export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
-  collectionName: 'privacy_policies';
-  info: {
-    displayName: 'privacy-policy';
-    pluralName: 'privacy-policies';
-    singularName: 'privacy-policy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::privacy-policy.privacy-policy'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -755,36 +785,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'titulo'> & Schema.Attribute.Required;
     sugerencias: Schema.Attribute.Component<'shared.otro-link', true>;
     titulo: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTermsAndConditionTermsAndCondition
-  extends Struct.SingleTypeSchema {
-  collectionName: 'terms_and_conditions';
-  info: {
-    displayName: 'terms-and-condition';
-    pluralName: 'terms-and-conditions';
-    singularName: 'terms-and-condition';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Schema.Attribute.Blocks;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::terms-and-condition.terms-and-condition'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1304,15 +1304,15 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
       'api::comentario.comentario': ApiComentarioComentario;
-      'api::cookies-policy.cookies-policy': ApiCookiesPolicyCookiesPolicy;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
       'api::noticia.noticia': ApiNoticiaNoticia;
+      'api::pagina-cookie.pagina-cookie': ApiPaginaCookiePaginaCookie;
+      'api::pagina-politica.pagina-politica': ApiPaginaPoliticaPaginaPolitica;
+      'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
       'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
-      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
-      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

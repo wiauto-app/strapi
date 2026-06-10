@@ -1,21 +1,21 @@
 {
   "kind": "singleType",
-  "collectionName": "privacy_policies",
+  "collectionName": "pagina_terminos",
   "info": {
-    "singularName": "privacy-policy",
-    "pluralName": "privacy-policies",
-    "displayName": "privacy-policy"
+    "singularName": "pagina-termino",
+    "pluralName": "pagina-terminos",
+    "displayName": "pagina termino"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "titulo": {
       "type": "string",
       "required": true
     },
-    "content": {
+    "contenido": {
       "type": "blocks",
       "required": true
     }
