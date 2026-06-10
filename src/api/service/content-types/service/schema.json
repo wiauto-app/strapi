@@ -27,6 +27,11 @@
         "shared.bloque-caracteristica",
         "shared.anuncio"
       ]
+    },
+    "sugerencias": {
+      "type": "component",
+      "component": "shared.otro-link",
+      "repeatable": true
     }
   }
 }

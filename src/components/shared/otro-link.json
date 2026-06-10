@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_otro_links",
+  "info": {
+    "displayName": "otro-link"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

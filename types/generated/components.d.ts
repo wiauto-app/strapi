@@ -168,6 +168,7 @@ export interface SharedDesplegable extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    orientacion: Schema.Attribute.Enumeration<['vertical', 'horizontal']>;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -192,6 +193,20 @@ export interface SharedLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String;
     url: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedOtroLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_otro_links';
+  info: {
+    displayName: 'otro-link';
+  };
+  attributes: {
+    descripcion: Schema.Attribute.Text & Schema.Attribute.Required;
+    imagen: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -241,6 +256,7 @@ declare module '@strapi/strapi' {
       'shared.desplegable': SharedDesplegable;
       'shared.icon-feature': SharedIconFeature;
       'shared.link': SharedLink;
+      'shared.otro-link': SharedOtroLink;
       'shared.seo': SharedSeo;
       'shared.user': SharedUser;
     }
