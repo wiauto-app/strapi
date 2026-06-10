@@ -723,12 +723,12 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiServicioServicio extends Struct.CollectionTypeSchema {
-  collectionName: 'servicios';
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
+  collectionName: 'services';
   info: {
-    displayName: 'servicio';
-    pluralName: 'servicios';
-    singularName: 'servicio';
+    displayName: 'service';
+    pluralName: 'services';
+    singularName: 'service';
   };
   options: {
     draftAndPublish: true;
@@ -737,13 +737,22 @@ export interface ApiServicioServicio extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    estructura: Schema.Attribute.DynamicZone<
+      [
+        'shared.desplegable',
+        'shared.carta-ventaja',
+        'shared.bloque-caracteristica',
+        'shared.anuncio',
+      ]
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::servicio.servicio'
+      'api::service.service'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'titulo'> & Schema.Attribute.Required;
     titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1301,7 +1310,7 @@ declare module '@strapi/strapi' {
       'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
-      'api::servicio.servicio': ApiServicioServicio;
+      'api::service.service': ApiServiceService;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

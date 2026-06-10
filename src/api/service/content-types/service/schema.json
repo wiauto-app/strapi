@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "estructura": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.desplegable",
+        "shared.carta-ventaja",
+        "shared.bloque-caracteristica",
+        "shared.anuncio"
+      ]
+    }
+  }
+}
