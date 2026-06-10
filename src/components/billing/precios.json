@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_billing_precios",
+  "info": {
+    "displayName": "precios"
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "decimal"
+    },
+    "recurrencia": {
+      "type": "string"
+    },
+    "stripe_price_id": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

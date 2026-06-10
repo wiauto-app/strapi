@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_billing_plan_items",
+  "info": {
+    "displayName": "plan-item"
+  },
+  "options": {},
+  "attributes": {
+    "descripcion": {
+      "type": "text"
+    },
+    "incluido": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

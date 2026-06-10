@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_desplegables",
+  "info": {
+    "displayName": "desplegable"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "blocks",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

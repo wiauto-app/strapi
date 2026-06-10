@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_anuncios",
+  "info": {
+    "displayName": "anuncio"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "boton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

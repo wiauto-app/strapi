@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_billing_plans",
+  "info": {
+    "displayName": "plan"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "item": {
+      "type": "component",
+      "component": "billing.plan-item",
+      "repeatable": true
+    },
+    "precios": {
+      "type": "component",
+      "component": "billing.precios",
+      "repeatable": true
+    },
+    "stripe_product_id": {
+      "type": "string"
+    },
+    "destacado": {
+      "type": "boolean"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
