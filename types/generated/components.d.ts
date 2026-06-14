@@ -1,5 +1,30 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutBusinessCard extends Struct.ComponentSchema {
+  collectionName: 'components_about_business_cards';
+  info: {
+    displayName: 'business-card';
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    descripcion: Schema.Attribute.Text;
+    subtitulo: Schema.Attribute.String;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface AboutTeam extends Struct.ComponentSchema {
+  collectionName: 'components_about_teams';
+  info: {
+    displayName: 'team';
+  };
+  attributes: {
+    persona: Schema.Attribute.Component<'shared.user', true>;
+    subtitulo: Schema.Attribute.String;
+    titulo: Schema.Attribute.String;
+  };
+}
+
 export interface BillingPlan extends Struct.ComponentSchema {
   collectionName: 'components_billing_plans';
   info: {
@@ -179,6 +204,7 @@ export interface SharedIconFeature extends Struct.ComponentSchema {
     displayName: 'icon_feature';
   };
   attributes: {
+    descripcion: Schema.Attribute.Text;
     icon: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     label: Schema.Attribute.String & Schema.Attribute.Required;
@@ -233,6 +259,7 @@ export interface SharedUser extends Struct.ComponentSchema {
     displayName: 'user';
   };
   attributes: {
+    descripcion: Schema.Attribute.Text;
     imagen: Schema.Attribute.Media<'images' | 'files'>;
     nombre: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -241,6 +268,8 @@ export interface SharedUser extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.business-card': AboutBusinessCard;
+      'about.team': AboutTeam;
       'billing.plan': BillingPlan;
       'billing.plan-item': BillingPlanItem;
       'billing.precios': BillingPrecios;

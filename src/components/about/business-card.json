@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_about_business_cards",
+  "info": {
+    "displayName": "business-card"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -791,6 +791,37 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSobreNosotroSobreNosotro extends Struct.SingleTypeSchema {
+  collectionName: 'sobre_nosotros';
+  info: {
+    displayName: 'sobre nosotro';
+    pluralName: 'sobre-nosotros';
+    singularName: 'sobre-nosotro';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    businessCard: Schema.Attribute.Component<'about.business-card', false>;
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sobre-nosotro.sobre-nosotro'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1313,6 +1344,7 @@ declare module '@strapi/strapi' {
       'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::service.service': ApiServiceService;
+      'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

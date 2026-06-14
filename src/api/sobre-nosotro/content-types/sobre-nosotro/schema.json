@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "sobre_nosotros",
+  "info": {
+    "singularName": "sobre-nosotro",
+    "pluralName": "sobre-nosotros",
+    "displayName": "sobre nosotro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "businessCard": {
+      "type": "component",
+      "component": "about.business-card",
+      "repeatable": false
+    }
+  }
+}

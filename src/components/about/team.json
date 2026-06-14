@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_teams",
+  "info": {
+    "displayName": "team"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "persona": {
+      "type": "component",
+      "component": "shared.user",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
