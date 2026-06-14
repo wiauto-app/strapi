@@ -33,6 +33,11 @@
       "type": "component",
       "component": "about.business-card",
       "repeatable": false
+    },
+    "equipo": {
+      "type": "component",
+      "component": "about.team",
+      "repeatable": true
     }
   }
 }
