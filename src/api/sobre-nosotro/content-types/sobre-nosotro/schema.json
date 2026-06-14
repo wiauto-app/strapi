@@ -37,7 +37,7 @@
     "equipo": {
       "type": "component",
       "component": "about.team",
-      "repeatable": true
+      "repeatable": false
     }
   }
 }
