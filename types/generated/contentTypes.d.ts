@@ -506,6 +506,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    herramientas: Schema.Attribute.Component<'shared.carta-ventaja', true>;
     homeAppAdvertisment: Schema.Attribute.Component<
       'home.app-advertisment',
       false

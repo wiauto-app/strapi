@@ -173,7 +173,7 @@ export interface SharedBloqueCaracteristica extends Struct.ComponentSchema {
 export interface SharedCartaVentaja extends Struct.ComponentSchema {
   collectionName: 'components_shared_carta_ventajas';
   info: {
-    displayName: 'carta-ventaja';
+    displayName: 'card';
   };
   attributes: {
     boton: Schema.Attribute.Component<'shared.link', false>;

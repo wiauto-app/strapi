@@ -21,6 +21,11 @@
       "component": "home.hero",
       "repeatable": false
     },
+    "herramientas": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
+    },
     "homeAppAdvertisment": {
       "type": "component",
       "component": "home.app-advertisment",
