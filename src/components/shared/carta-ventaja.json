@@ -28,6 +28,9 @@
     },
     "colorFondo": {
       "type": "string"
+    },
+    "colorTexto": {
+      "type": "string"
     }
   },
   "config": {}
