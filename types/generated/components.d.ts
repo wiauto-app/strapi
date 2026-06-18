@@ -268,6 +268,77 @@ export interface SharedUser extends Struct.ComponentSchema {
   };
 }
 
+export interface VenderVehiculoComparacion extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_comparacions';
+  info: {
+    displayName: 'comparacion';
+  };
+  attributes: {
+    planes: Schema.Attribute.Component<'vender-vehiculo.plan', true>;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface VenderVehiculoConsejos extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_consejos';
+  info: {
+    displayName: 'consejos';
+  };
+  attributes: {
+    consejo: Schema.Attribute.Component<'shared.carta-ventaja', true>;
+    descripcion: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface VenderVehiculoFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_faqs';
+  info: {
+    displayName: 'faqs';
+  };
+  attributes: {
+    pregunta: Schema.Attribute.Component<'shared.desplegable', true>;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface VenderVehiculoFeature extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_features';
+  info: {
+    displayName: 'feature';
+  };
+  attributes: {
+    incluido: Schema.Attribute.Boolean;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface VenderVehiculoPlan extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_plans';
+  info: {
+    displayName: 'plan';
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<
+      'vender-vehiculo.feature',
+      true
+    >;
+    nombre: Schema.Attribute.String;
+  };
+}
+
+export interface VenderVehiculoVentajas extends Struct.ComponentSchema {
+  collectionName: 'components_vender_vehiculo_ventajas';
+  info: {
+    displayName: 'ventajas';
+  };
+  attributes: {
+    descripcion: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
+    ventaja: Schema.Attribute.Component<'shared.carta-ventaja', true>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -291,6 +362,12 @@ declare module '@strapi/strapi' {
       'shared.otro-link': SharedOtroLink;
       'shared.seo': SharedSeo;
       'shared.user': SharedUser;
+      'vender-vehiculo.comparacion': VenderVehiculoComparacion;
+      'vender-vehiculo.consejos': VenderVehiculoConsejos;
+      'vender-vehiculo.faqs': VenderVehiculoFaqs;
+      'vender-vehiculo.feature': VenderVehiculoFeature;
+      'vender-vehiculo.plan': VenderVehiculoPlan;
+      'vender-vehiculo.ventajas': VenderVehiculoVentajas;
     }
   }
 }

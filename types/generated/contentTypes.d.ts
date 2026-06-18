@@ -824,6 +824,50 @@ export interface ApiSobreNosotroSobreNosotro extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiVenderVehiculoVenderVehiculo
+  extends Struct.SingleTypeSchema {
+  collectionName: 'vender_vehiculos';
+  info: {
+    displayName: 'vender-vehiculo';
+    pluralName: 'vender-vehiculos';
+    singularName: 'vender-vehiculo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comparacion: Schema.Attribute.Component<
+      'vender-vehiculo.comparacion',
+      false
+    >;
+    consejos: Schema.Attribute.Component<'vender-vehiculo.consejos', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text & Schema.Attribute.Required;
+    imagen: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vender-vehiculo.vender-vehiculo'
+    > &
+      Schema.Attribute.Private;
+    marketingCard: Schema.Attribute.Component<'shared.carta-ventaja', false>;
+    particular: Schema.Attribute.Component<'shared.carta-ventaja', false>;
+    preguntas: Schema.Attribute.Component<'vender-vehiculo.faqs', false>;
+    profesional: Schema.Attribute.Component<'shared.carta-ventaja', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ventajas: Schema.Attribute.Component<'vender-vehiculo.ventajas', false>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1347,6 +1391,7 @@ declare module '@strapi/strapi' {
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::service.service': ApiServiceService;
       'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
+      'api::vender-vehiculo.vender-vehiculo': ApiVenderVehiculoVenderVehiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

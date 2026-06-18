@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_vender_vehiculo_faqs",
+  "info": {
+    "displayName": "faqs"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "pregunta": {
+      "type": "component",
+      "component": "shared.desplegable",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

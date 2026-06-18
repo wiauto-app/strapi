@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_vender_vehiculo_plans",
+  "info": {
+    "displayName": "plan"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "vender-vehiculo.feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

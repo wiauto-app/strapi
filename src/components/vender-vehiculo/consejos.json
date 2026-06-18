@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_vender_vehiculo_consejos",
+  "info": {
+    "displayName": "consejos"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "consejo": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

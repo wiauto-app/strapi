@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_vender_vehiculo_comparacions",
+  "info": {
+    "displayName": "comparacion"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "planes": {
+      "type": "component",
+      "component": "vender-vehiculo.plan",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
