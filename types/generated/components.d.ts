@@ -163,6 +163,18 @@ export interface PlanesHero extends Struct.ComponentSchema {
   };
 }
 
+export interface PlanesTechAdd extends Struct.ComponentSchema {
+  collectionName: 'components_planes_tech_adds';
+  info: {
+    displayName: 'tech-add';
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedAnuncio extends Struct.ComponentSchema {
   collectionName: 'components_shared_anuncios';
   info: {
@@ -426,6 +438,7 @@ declare module '@strapi/strapi' {
       'home.process-section-tabs': HomeProcessSectionTabs;
       'planes.caracteristicas': PlanesCaracteristicas;
       'planes.hero': PlanesHero;
+      'planes.tech-add': PlanesTechAdd;
       'shared.anuncio': SharedAnuncio;
       'shared.bloque-caracteristica': SharedBloqueCaracteristica;
       'shared.carta-ventaja': SharedCartaVentaja;

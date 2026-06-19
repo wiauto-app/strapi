@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_planes_tech_adds",
+  "info": {
+    "displayName": "tech-add"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
