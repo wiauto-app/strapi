@@ -665,7 +665,12 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
       'api::pagina-plan.pagina-plan'
     > &
       Schema.Attribute.Private;
+    mobile_advertisment: Schema.Attribute.Component<
+      'shared.mobile-advertisment',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    tech_add: Schema.Attribute.Component<'planes.tech-add', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

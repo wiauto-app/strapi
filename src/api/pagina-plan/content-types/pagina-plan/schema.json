@@ -25,6 +25,16 @@
       "type": "component",
       "component": "planes.caracteristicas",
       "repeatable": false
+    },
+    "tech_add": {
+      "type": "component",
+      "component": "planes.tech-add",
+      "repeatable": false
+    },
+    "mobile_advertisment": {
+      "type": "component",
+      "component": "shared.mobile-advertisment",
+      "repeatable": false
     }
   }
 }
