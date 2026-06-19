@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_planes_heroes",
+  "info": {
+    "displayName": "hero"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

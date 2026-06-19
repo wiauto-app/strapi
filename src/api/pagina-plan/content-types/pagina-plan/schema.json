@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagina_plans",
+  "info": {
+    "singularName": "pagina-plan",
+    "pluralName": "pagina-plans",
+    "displayName": "pagina-plan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "estadisticas": {
+      "type": "component",
+      "component": "shared.estadistica",
+      "repeatable": true
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    }
+  }
+}

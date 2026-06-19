@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_mobile_advertisments",
+  "info": {
+    "displayName": "mobile-advertisment"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "apple": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "google": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

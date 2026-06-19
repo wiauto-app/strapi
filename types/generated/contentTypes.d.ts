@@ -639,6 +639,39 @@ export interface ApiPaginaCookiePaginaCookie extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_plans';
+  info: {
+    displayName: 'pagina-plan';
+    pluralName: 'pagina-plans';
+    singularName: 'pagina-plan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    estadisticas: Schema.Attribute.Component<'shared.estadistica', true>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-plan.pagina-plan'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaginaPoliticaPaginaPolitica
   extends Struct.SingleTypeSchema {
   collectionName: 'pagina_politicas';
@@ -1385,6 +1418,7 @@ declare module '@strapi/strapi' {
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina-cookie.pagina-cookie': ApiPaginaCookiePaginaCookie;
+      'api::pagina-plan.pagina-plan': ApiPaginaPlanPaginaPlan;
       'api::pagina-politica.pagina-politica': ApiPaginaPoliticaPaginaPolitica;
       'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
       'api::plan.plan': ApiPlanPlan;

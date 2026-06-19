@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_estadisticas",
+  "info": {
+    "displayName": "estadistica"
+  },
+  "options": {},
+  "attributes": {
+    "estadistica": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

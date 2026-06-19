@@ -142,6 +142,27 @@ export interface HomeProcessSectionTabs extends Struct.ComponentSchema {
   };
 }
 
+export interface PlanesCaracteristicas extends Struct.ComponentSchema {
+  collectionName: 'components_planes_caracteristicas';
+  info: {
+    displayName: 'caracteristicas';
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+  };
+}
+
+export interface PlanesHero extends Struct.ComponentSchema {
+  collectionName: 'components_planes_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'shared.header', false>;
+  };
+}
+
 export interface SharedAnuncio extends Struct.ComponentSchema {
   collectionName: 'components_shared_anuncios';
   info: {
@@ -201,6 +222,41 @@ export interface SharedDesplegable extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEstadistica extends Struct.ComponentSchema {
+  collectionName: 'components_shared_estadisticas';
+  info: {
+    displayName: 'estadistica';
+  };
+  attributes: {
+    descripcion: Schema.Attribute.String;
+    estadistica: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHeader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_headers';
+  info: {
+    displayName: 'header';
+  };
+  attributes: {
+    descripcion: Schema.Attribute.String;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    acciones: Schema.Attribute.Component<'shared.link', true>;
+    descripcion: Schema.Attribute.Text;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titulo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedIconFeature extends Struct.ComponentSchema {
   collectionName: 'components_shared_icon_features';
   info: {
@@ -220,8 +276,23 @@ export interface SharedLink extends Struct.ComponentSchema {
     displayName: 'link';
   };
   attributes: {
+    destacado: Schema.Attribute.Boolean;
     label: Schema.Attribute.String;
     url: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedMobileAdvertisment extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mobile_advertisments';
+  info: {
+    displayName: 'mobile-advertisment';
+  };
+  attributes: {
+    apple: Schema.Attribute.Component<'shared.link', false>;
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    google: Schema.Attribute.Component<'shared.link', false>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -353,12 +424,18 @@ declare module '@strapi/strapi' {
       'home.newsletter': HomeNewsletter;
       'home.process-section': HomeProcessSection;
       'home.process-section-tabs': HomeProcessSectionTabs;
+      'planes.caracteristicas': PlanesCaracteristicas;
+      'planes.hero': PlanesHero;
       'shared.anuncio': SharedAnuncio;
       'shared.bloque-caracteristica': SharedBloqueCaracteristica;
       'shared.carta-ventaja': SharedCartaVentaja;
       'shared.desplegable': SharedDesplegable;
+      'shared.estadistica': SharedEstadistica;
+      'shared.header': SharedHeader;
+      'shared.hero': SharedHero;
       'shared.icon-feature': SharedIconFeature;
       'shared.link': SharedLink;
+      'shared.mobile-advertisment': SharedMobileAdvertisment;
       'shared.otro-link': SharedOtroLink;
       'shared.seo': SharedSeo;
       'shared.user': SharedUser;
