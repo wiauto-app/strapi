@@ -106,6 +106,18 @@ export interface HomeHero extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeLowEmisions extends Struct.ComponentSchema {
+  collectionName: 'components_home_low_emisions';
+  info: {
+    displayName: 'low_emisions';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'shared.header', false>;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    links: Schema.Attribute.Component<'shared.carta-ventaja', true>;
+  };
+}
+
 export interface HomeNewsletter extends Struct.ComponentSchema {
   collectionName: 'components_home_newsletters';
   info: {
@@ -289,6 +301,7 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
   attributes: {
     destacado: Schema.Attribute.Boolean;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String;
     url: Schema.Attribute.Text;
   };
@@ -433,6 +446,7 @@ declare module '@strapi/strapi' {
       'home.app-advertisment': HomeAppAdvertisment;
       'home.features-section': HomeFeaturesSection;
       'home.hero': HomeHero;
+      'home.low-emisions': HomeLowEmisions;
       'home.newsletter': HomeNewsletter;
       'home.process-section': HomeProcessSection;
       'home.process-section-tabs': HomeProcessSectionTabs;

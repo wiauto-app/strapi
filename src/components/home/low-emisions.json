@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_home_low_emisions",
+  "info": {
+    "displayName": "low_emisions"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
