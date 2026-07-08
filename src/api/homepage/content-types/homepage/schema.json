@@ -45,6 +45,11 @@
       "type": "component",
       "component": "home.process-section",
       "repeatable": false
+    },
+    "bajas_emisiones": {
+      "type": "component",
+      "component": "home.low-emisions",
+      "repeatable": false
     }
   }
 }
