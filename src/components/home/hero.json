@@ -25,6 +25,14 @@
       "type": "component",
       "component": "shared.link",
       "repeatable": true
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "descarga_app": {
+      "type": "string"
     }
   },
   "config": {}

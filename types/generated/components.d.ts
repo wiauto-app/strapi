@@ -101,6 +101,8 @@ export interface HomeHero extends Struct.ComponentSchema {
     backgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    descarga_app: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
