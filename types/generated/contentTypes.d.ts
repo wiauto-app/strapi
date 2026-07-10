@@ -492,6 +492,38 @@ export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    derechosReservados: Schema.Attribute.String;
+    descripcion: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    redesSociales: Schema.Attribute.Component<'shared.link', true>;
+    sections: Schema.Attribute.Component<'footer.footer-section', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1420,6 +1452,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
       'api::comentario.comentario': ApiComentarioComentario;
+      'api::footer.footer': ApiFooterFooter;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
       'api::noticia.noticia': ApiNoticiaNoticia;

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_footer_footer_sections",
+  "info": {
+    "displayName": "footerSection"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -64,6 +64,17 @@ export interface BillingPrecios extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterFooterSection extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footer_sections';
+  info: {
+    displayName: 'footerSection';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'shared.link', true>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeAppAdvertisment extends Struct.ComponentSchema {
   collectionName: 'components_home_app_advertisments';
   info: {
@@ -304,8 +315,10 @@ export interface SharedLink extends Struct.ComponentSchema {
   attributes: {
     destacado: Schema.Attribute.Boolean;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    label: Schema.Attribute.String;
-    url: Schema.Attribute.Text;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'/'>;
   };
 }
 
@@ -445,6 +458,7 @@ declare module '@strapi/strapi' {
       'billing.plan': BillingPlan;
       'billing.plan-item': BillingPlanItem;
       'billing.precios': BillingPrecios;
+      'footer.footer-section': FooterFooterSection;
       'home.app-advertisment': HomeAppAdvertisment;
       'home.features-section': HomeFeaturesSection;
       'home.hero': HomeHero;
