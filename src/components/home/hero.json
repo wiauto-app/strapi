@@ -33,6 +33,11 @@
     },
     "descarga_app": {
       "type": "string"
+    },
+    "heroImages": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": true
     }
   },
   "config": {}

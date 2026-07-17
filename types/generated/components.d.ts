@@ -114,6 +114,7 @@ export interface HomeHero extends Struct.ComponentSchema {
     >;
     caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
     descarga_app: Schema.Attribute.String;
+    heroImages: Schema.Attribute.Component<'shared.image', true>;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -328,6 +329,21 @@ export interface SharedIconFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -521,6 +537,7 @@ declare module '@strapi/strapi' {
       'shared.header': SharedHeader;
       'shared.hero': SharedHero;
       'shared.icon-feature': SharedIconFeature;
+      'shared.image': SharedImage;
       'shared.link': SharedLink;
       'shared.mobile-advertisment': SharedMobileAdvertisment;
       'shared.otro-link': SharedOtroLink;
