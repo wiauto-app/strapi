@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_comments",
+  "info": {
+    "displayName": "comment"
+  },
+  "options": {},
+  "attributes": {
+    "usuario": {
+      "type": "component",
+      "component": "shared.user",
+      "repeatable": false,
+      "required": true
+    },
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 5
+    },
+    "comentario": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

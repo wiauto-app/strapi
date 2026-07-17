@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_simulador_reasons",
+  "info": {
+    "displayName": "reasons"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "razones": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

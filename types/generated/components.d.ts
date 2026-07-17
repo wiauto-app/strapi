@@ -243,6 +243,27 @@ export interface SharedCartaVentaja extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedComment extends Struct.ComponentSchema {
+  collectionName: 'components_shared_comments';
+  info: {
+    displayName: 'comment';
+  };
+  attributes: {
+    comentario: Schema.Attribute.Text & Schema.Attribute.Required;
+    rating: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      >;
+    usuario: Schema.Attribute.Component<'shared.user', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedDesplegable extends Struct.ComponentSchema {
   collectionName: 'components_shared_desplegables';
   info: {
@@ -379,6 +400,28 @@ export interface SharedUser extends Struct.ComponentSchema {
   };
 }
 
+export interface SimuladorComments extends Struct.ComponentSchema {
+  collectionName: 'components_simulador_comments';
+  info: {
+    displayName: 'comments';
+  };
+  attributes: {
+    comentario: Schema.Attribute.Component<'shared.comment', true>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SimuladorReasons extends Struct.ComponentSchema {
+  collectionName: 'components_simulador_reasons';
+  info: {
+    displayName: 'reasons';
+  };
+  attributes: {
+    razones: Schema.Attribute.Component<'shared.icon-feature', true>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface VenderVehiculoComparacion extends Struct.ComponentSchema {
   collectionName: 'components_vender_vehiculo_comparacions';
   info: {
@@ -472,6 +515,7 @@ declare module '@strapi/strapi' {
       'shared.anuncio': SharedAnuncio;
       'shared.bloque-caracteristica': SharedBloqueCaracteristica;
       'shared.carta-ventaja': SharedCartaVentaja;
+      'shared.comment': SharedComment;
       'shared.desplegable': SharedDesplegable;
       'shared.estadistica': SharedEstadistica;
       'shared.header': SharedHeader;
@@ -482,6 +526,8 @@ declare module '@strapi/strapi' {
       'shared.otro-link': SharedOtroLink;
       'shared.seo': SharedSeo;
       'shared.user': SharedUser;
+      'simulador.comments': SimuladorComments;
+      'simulador.reasons': SimuladorReasons;
       'vender-vehiculo.comparacion': VenderVehiculoComparacion;
       'vender-vehiculo.consejos': VenderVehiculoConsejos;
       'vender-vehiculo.faqs': VenderVehiculoFaqs;

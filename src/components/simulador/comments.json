@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_simulador_comments",
+  "info": {
+    "displayName": "comments"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "comentario": {
+      "type": "component",
+      "component": "shared.comment",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

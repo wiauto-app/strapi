@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "simuladors",
+  "info": {
+    "singularName": "simulador",
+    "pluralName": "simuladors",
+    "displayName": "simulador"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "financiar": {
+      "type": "component",
+      "component": "simulador.reasons",
+      "repeatable": false
+    },
+    "facilidades": {
+      "type": "component",
+      "component": "simulador.reasons",
+      "repeatable": false
+    },
+    "comentarios": {
+      "type": "component",
+      "component": "simulador.comments",
+      "repeatable": false
+    }
+  }
+}

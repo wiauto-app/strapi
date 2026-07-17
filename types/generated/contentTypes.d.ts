@@ -863,6 +863,37 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSimuladorSimulador extends Struct.SingleTypeSchema {
+  collectionName: 'simuladors';
+  info: {
+    displayName: 'simulador';
+    pluralName: 'simuladors';
+    singularName: 'simulador';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comentarios: Schema.Attribute.Component<'simulador.comments', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    facilidades: Schema.Attribute.Component<'simulador.reasons', false>;
+    financiar: Schema.Attribute.Component<'simulador.reasons', false>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::simulador.simulador'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSobreNosotroSobreNosotro extends Struct.SingleTypeSchema {
   collectionName: 'sobre_nosotros';
   info: {
@@ -1463,6 +1494,7 @@ declare module '@strapi/strapi' {
       'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::service.service': ApiServiceService;
+      'api::simulador.simulador': ApiSimuladorSimulador;
       'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
       'api::vender-vehiculo.vender-vehiculo': ApiVenderVehiculoVenderVehiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
