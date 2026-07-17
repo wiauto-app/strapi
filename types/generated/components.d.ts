@@ -322,8 +322,8 @@ export interface SharedIconFeature extends Struct.ComponentSchema {
   };
   attributes: {
     descripcion: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    iconName: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
