@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_soporte_preguntas",
+  "info": {
+    "displayName": "preguntas"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "preguntas": {
+      "type": "component",
+      "component": "shared.pregunta",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

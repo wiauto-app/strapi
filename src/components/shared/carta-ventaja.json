@@ -31,6 +31,9 @@
     },
     "colorTexto": {
       "type": "string"
+    },
+    "iconName": {
+      "type": "string"
     }
   },
   "config": {}

@@ -926,6 +926,36 @@ export interface ApiSobreNosotroSobreNosotro extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSoporteSoporte extends Struct.SingleTypeSchema {
+  collectionName: 'soportes';
+  info: {
+    displayName: 'soporte';
+    pluralName: 'soportes';
+    singularName: 'soporte';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    canales: Schema.Attribute.Component<'soporte.channels', false>;
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::soporte.soporte'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVenderVehiculoVenderVehiculo
   extends Struct.SingleTypeSchema {
   collectionName: 'vender_vehiculos';
@@ -1496,6 +1526,7 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::simulador.simulador': ApiSimuladorSimulador;
       'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
+      'api::soporte.soporte': ApiSoporteSoporte;
       'api::vender-vehiculo.vender-vehiculo': ApiVenderVehiculoVenderVehiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

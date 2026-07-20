@@ -25,6 +25,16 @@
         "videos",
         "audios"
       ]
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "card": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": false
     }
   },
   "config": {}

@@ -239,6 +239,7 @@ export interface SharedCartaVentaja extends Struct.ComponentSchema {
     colorFondo: Schema.Attribute.String;
     colorTexto: Schema.Attribute.String;
     descripcion: Schema.Attribute.Text;
+    iconName: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     titulo: Schema.Attribute.String;
   };
@@ -310,6 +311,8 @@ export interface SharedHero extends Struct.ComponentSchema {
   };
   attributes: {
     acciones: Schema.Attribute.Component<'shared.link', true>;
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    card: Schema.Attribute.Component<'shared.carta-ventaja', false>;
     descripcion: Schema.Attribute.Text;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     titulo: Schema.Attribute.String;
@@ -388,6 +391,17 @@ export interface SharedOtroLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPregunta extends Struct.ComponentSchema {
+  collectionName: 'components_shared_preguntas';
+  info: {
+    displayName: 'pregunta';
+  };
+  attributes: {
+    pregunta: Schema.Attribute.String;
+    respuesta: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -436,6 +450,28 @@ export interface SimuladorReasons extends Struct.ComponentSchema {
   attributes: {
     razones: Schema.Attribute.Component<'shared.icon-feature', true>;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SoporteChannels extends Struct.ComponentSchema {
+  collectionName: 'components_soporte_channels';
+  info: {
+    displayName: 'channels';
+  };
+  attributes: {
+    channel: Schema.Attribute.Component<'shared.carta-ventaja', true>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+  };
+}
+
+export interface SoportePreguntas extends Struct.ComponentSchema {
+  collectionName: 'components_soporte_preguntas';
+  info: {
+    displayName: 'preguntas';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'shared.header', false>;
+    preguntas: Schema.Attribute.Component<'shared.pregunta', true>;
   };
 }
 
@@ -542,10 +578,13 @@ declare module '@strapi/strapi' {
       'shared.link': SharedLink;
       'shared.mobile-advertisment': SharedMobileAdvertisment;
       'shared.otro-link': SharedOtroLink;
+      'shared.pregunta': SharedPregunta;
       'shared.seo': SharedSeo;
       'shared.user': SharedUser;
       'simulador.comments': SimuladorComments;
       'simulador.reasons': SimuladorReasons;
+      'soporte.channels': SoporteChannels;
+      'soporte.preguntas': SoportePreguntas;
       'vender-vehiculo.comparacion': VenderVehiculoComparacion;
       'vender-vehiculo.consejos': VenderVehiculoConsejos;
       'vender-vehiculo.faqs': VenderVehiculoFaqs;

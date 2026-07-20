@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_soporte_channels",
+  "info": {
+    "displayName": "channels"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "channel": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

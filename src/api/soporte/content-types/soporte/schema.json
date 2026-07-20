@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "soportes",
+  "info": {
+    "singularName": "soporte",
+    "pluralName": "soportes",
+    "displayName": "soporte"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "canales": {
+      "type": "component",
+      "component": "soporte.channels",
+      "repeatable": false
+    }
+  }
+}
