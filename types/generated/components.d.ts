@@ -335,6 +335,7 @@ export interface SharedImage extends Struct.ComponentSchema {
     displayName: 'image';
   };
   attributes: {
+    active: Schema.Attribute.Boolean;
     alt: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
