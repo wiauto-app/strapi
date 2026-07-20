@@ -25,6 +25,11 @@
       "type": "component",
       "component": "soporte.channels",
       "repeatable": false
+    },
+    "preguntas": {
+      "type": "component",
+      "component": "soporte.preguntas",
+      "repeatable": false
     }
   }
 }
