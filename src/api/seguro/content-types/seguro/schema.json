@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "seguros",
+  "info": {
+    "singularName": "seguro",
+    "pluralName": "seguros",
+    "displayName": "seguro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "home.features-section",
+      "repeatable": false
+    },
+    "seguridad": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "incluido": {
+      "type": "component",
+      "component": "home.features-section",
+      "repeatable": false
+    },
+    "aliados": {
+      "type": "component",
+      "component": "home.features-section",
+      "repeatable": false
+    }
+  }
+}

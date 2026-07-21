@@ -825,6 +825,38 @@ export interface ApiPreguntaFrecuentePreguntaFrecuente
   };
 }
 
+export interface ApiSeguroSeguro extends Struct.SingleTypeSchema {
+  collectionName: 'seguros';
+  info: {
+    displayName: 'seguro';
+    pluralName: 'seguros';
+    singularName: 'seguro';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aliados: Schema.Attribute.Component<'home.features-section', false>;
+    caracteristicas: Schema.Attribute.Component<'home.features-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    incluido: Schema.Attribute.Component<'home.features-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::seguro.seguro'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seguridad: Schema.Attribute.Component<'shared.hero', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -1524,6 +1556,7 @@ declare module '@strapi/strapi' {
       'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
       'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
+      'api::seguro.seguro': ApiSeguroSeguro;
       'api::service.service': ApiServiceService;
       'api::simulador.simulador': ApiSimuladorSimulador;
       'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
