@@ -64,6 +64,28 @@ export interface BillingPrecios extends Struct.ComponentSchema {
   };
 }
 
+export interface FinanciacionAdvantages extends Struct.ComponentSchema {
+  collectionName: 'components_financiacion_advantages';
+  info: {
+    displayName: 'advantages';
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    header: Schema.Attribute.Component<'shared.header', false>;
+  };
+}
+
+export interface FinanciacionSteps extends Struct.ComponentSchema {
+  collectionName: 'components_financiacion_steps';
+  info: {
+    displayName: 'steps';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'shared.header', false>;
+    steps: Schema.Attribute.Component<'shared.icon-feature', true>;
+  };
+}
+
 export interface FooterFooterSection extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_sections';
   info: {
@@ -554,6 +576,8 @@ declare module '@strapi/strapi' {
       'billing.plan': BillingPlan;
       'billing.plan-item': BillingPlanItem;
       'billing.precios': BillingPrecios;
+      'financiacion.advantages': FinanciacionAdvantages;
+      'financiacion.steps': FinanciacionSteps;
       'footer.footer-section': FooterFooterSection;
       'home.app-advertisment': HomeAppAdvertisment;
       'home.features-section': HomeFeaturesSection;

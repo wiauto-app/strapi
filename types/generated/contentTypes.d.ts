@@ -492,6 +492,38 @@ export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFinanciacionFinanciacion extends Struct.SingleTypeSchema {
+  collectionName: 'financiacions';
+  info: {
+    displayName: 'financiacion';
+    pluralName: 'financiacions';
+    singularName: 'financiacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    estadisticas: Schema.Attribute.Component<'shared.estadistica', true>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::financiacion.financiacion'
+    > &
+      Schema.Attribute.Private;
+    pasos: Schema.Attribute.Component<'financiacion.steps', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    soporte: Schema.Attribute.Component<'shared.hero', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ventajas: Schema.Attribute.Component<'financiacion.advantages', false>;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1546,6 +1578,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
       'api::comentario.comentario': ApiComentarioComentario;
+      'api::financiacion.financiacion': ApiFinanciacionFinanciacion;
       'api::footer.footer': ApiFooterFooter;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;

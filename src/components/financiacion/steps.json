@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_financiacion_steps",
+  "info": {
+    "displayName": "steps"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "steps": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
