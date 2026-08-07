@@ -587,6 +587,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     processSection: Schema.Attribute.Component<'home.process-section', false>;
+    promocion_planes: Schema.Attribute.Component<'shared.hero', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

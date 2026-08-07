@@ -36,6 +36,11 @@
       "component": "home.features-section",
       "repeatable": false
     },
+    "promocion_planes": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
     "homeNewsletter": {
       "type": "component",
       "component": "home.newsletter",
