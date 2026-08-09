@@ -315,12 +315,26 @@ export interface SharedEstadistica extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    categoria: Schema.Attribute.String;
+    iconName: Schema.Attribute.String;
+    pregunta: Schema.Attribute.String;
+    respuesta: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedHeader extends Struct.ComponentSchema {
   collectionName: 'components_shared_headers';
   info: {
     displayName: 'header';
   };
   attributes: {
+    busqueda: Schema.Attribute.Component<'shared.text-field', false>;
     descripcion: Schema.Attribute.String;
     titulo: Schema.Attribute.String;
   };
@@ -438,6 +452,17 @@ export interface SharedSeo extends Struct.ComponentSchema {
     shareImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+  };
+}
+
+export interface SharedTextField extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_fields';
+  info: {
+    displayName: 'text_field';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
   };
 }
 
@@ -595,6 +620,7 @@ declare module '@strapi/strapi' {
       'shared.comment': SharedComment;
       'shared.desplegable': SharedDesplegable;
       'shared.estadistica': SharedEstadistica;
+      'shared.faq': SharedFaq;
       'shared.header': SharedHeader;
       'shared.hero': SharedHero;
       'shared.icon-feature': SharedIconFeature;
@@ -604,6 +630,7 @@ declare module '@strapi/strapi' {
       'shared.otro-link': SharedOtroLink;
       'shared.pregunta': SharedPregunta;
       'shared.seo': SharedSeo;
+      'shared.text-field': SharedTextField;
       'shared.user': SharedUser;
       'simulador.comments': SimuladorComments;
       'simulador.reasons': SimuladorReasons;

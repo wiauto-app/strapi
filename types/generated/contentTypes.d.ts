@@ -492,6 +492,33 @@ export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.SingleTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'faq';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<'shared.faq', true>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    soporte: Schema.Attribute.Component<'shared.carta-ventaja', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFinanciacionFinanciacion extends Struct.SingleTypeSchema {
   collectionName: 'financiacions';
   info: {
@@ -1579,6 +1606,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
       'api::comentario.comentario': ApiComentarioComentario;
+      'api::faq.faq': ApiFaqFaq;
       'api::financiacion.financiacion': ApiFinanciacionFinanciacion;
       'api::footer.footer': ApiFooterFooter;
       'api::homepage.homepage': ApiHomepageHomepage;

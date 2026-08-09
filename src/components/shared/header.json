@@ -10,6 +10,11 @@
     },
     "descripcion": {
       "type": "string"
+    },
+    "busqueda": {
+      "type": "component",
+      "component": "shared.text-field",
+      "repeatable": false
     }
   },
   "config": {}

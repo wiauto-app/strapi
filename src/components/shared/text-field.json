@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_text_fields",
+  "info": {
+    "displayName": "text_field"
+  },
+  "options": {},
+  "attributes": {
+    "placeholder": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

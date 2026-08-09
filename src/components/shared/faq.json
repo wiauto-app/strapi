@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_faqs",
+  "info": {
+    "displayName": "faq"
+  },
+  "options": {},
+  "attributes": {
+    "pregunta": {
+      "type": "string"
+    },
+    "respuesta": {
+      "type": "blocks"
+    },
+    "categoria": {
+      "type": "string"
+    },
+    "iconName": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
