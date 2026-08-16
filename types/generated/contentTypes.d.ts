@@ -743,6 +743,7 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    action_call_section: Schema.Attribute.Component<'shared.hero', false>;
     caracteristicas: Schema.Attribute.Component<
       'planes.caracteristicas',
       false
@@ -821,32 +822,6 @@ export interface ApiPaginaTerminoPaginaTermino extends Struct.SingleTypeSchema {
       'api::pagina-termino.pagina-termino'
     > &
       Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    titulo: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPlanPlan extends Struct.SingleTypeSchema {
-  collectionName: 'plans';
-  info: {
-    displayName: 'plan';
-    pluralName: 'plans';
-    singularName: 'plan';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::plan.plan'> &
-      Schema.Attribute.Private;
-    planes: Schema.Attribute.Component<'billing.plan', true>;
     publishedAt: Schema.Attribute.DateTime;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1616,7 +1591,6 @@ declare module '@strapi/strapi' {
       'api::pagina-plan.pagina-plan': ApiPaginaPlanPaginaPlan;
       'api::pagina-politica.pagina-politica': ApiPaginaPoliticaPaginaPolitica;
       'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
-      'api::plan.plan': ApiPlanPlan;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::seguro.seguro': ApiSeguroSeguro;
       'api::service.service': ApiServiceService;

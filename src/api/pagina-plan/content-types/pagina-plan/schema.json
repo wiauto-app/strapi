@@ -21,6 +21,11 @@
       "component": "shared.estadistica",
       "repeatable": true
     },
+    "action_call_section": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
     "caracteristicas": {
       "type": "component",
       "component": "planes.caracteristicas",
