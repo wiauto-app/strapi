@@ -26,6 +26,9 @@
         "videos",
         "audios"
       ]
+    },
+    "iconName": {
+      "type": "string"
     }
   },
   "config": {}
