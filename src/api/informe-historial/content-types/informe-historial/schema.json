@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "informe_historials",
+  "info": {
+    "singularName": "informe-historial",
+    "pluralName": "informe-historials",
+    "displayName": "informe-historial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    },
+    "como_funciona": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "transfierir_vehiculos",
+  "info": {
+    "singularName": "transfierir-vehiculo",
+    "pluralName": "transfierir-vehiculos",
+    "displayName": "transfierir-vehiculo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "nos_encargamos": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    },
+    "transferir": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    },
+    "has_vendido": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    }
+  }
+}

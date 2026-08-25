@@ -583,6 +583,43 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGarantiaMecanicaGarantiaMecanica
+  extends Struct.SingleTypeSchema {
+  collectionName: 'garantia_mecanicas';
+  info: {
+    displayName: 'garantia-mecanica';
+    pluralName: 'garantia-mecanicas';
+    singularName: 'garantia-mecanica';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coche_protegido: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::garantia-mecanica.garantia-mecanica'
+    > &
+      Schema.Attribute.Private;
+    mas_que_garantia: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -615,6 +652,40 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     processSection: Schema.Attribute.Component<'home.process-section', false>;
     promocion_planes: Schema.Attribute.Component<'shared.hero', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInformeHistorialInformeHistorial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'informe_historials';
+  info: {
+    displayName: 'informe-historial';
+    pluralName: 'informe-historials';
+    singularName: 'informe-historial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    como_funciona: Schema.Attribute.Component<'planes.caracteristicas', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::informe-historial.informe-historial'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -860,6 +931,39 @@ export interface ApiPreguntaFrecuentePreguntaFrecuente
   };
 }
 
+export interface ApiRevisionRevision extends Struct.SingleTypeSchema {
+  collectionName: 'revisions';
+  info: {
+    displayName: 'revision';
+    pluralName: 'revisions';
+    singularName: 'revision';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    como_funciona: Schema.Attribute.Component<'planes.caracteristicas', false>;
+    compra_sabiendo: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::revision.revision'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSeguroSeguro extends Struct.SingleTypeSchema {
   collectionName: 'seguros';
   info: {
@@ -1018,6 +1122,38 @@ export interface ApiSoporteSoporte extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     preguntas: Schema.Attribute.Component<'soporte.preguntas', false>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTransfierirVehiculoTransfierirVehiculo
+  extends Struct.SingleTypeSchema {
+  collectionName: 'transfierir_vehiculos';
+  info: {
+    displayName: 'transfierir-vehiculo';
+    pluralName: 'transfierir-vehiculos';
+    singularName: 'transfierir-vehiculo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    has_vendido: Schema.Attribute.Component<'shared.hero', false>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::transfierir-vehiculo.transfierir-vehiculo'
+    > &
+      Schema.Attribute.Private;
+    nos_encargamos: Schema.Attribute.Component<'planes.caracteristicas', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    transferir: Schema.Attribute.Component<'planes.caracteristicas', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1584,7 +1720,9 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::financiacion.financiacion': ApiFinanciacionFinanciacion;
       'api::footer.footer': ApiFooterFooter;
+      'api::garantia-mecanica.garantia-mecanica': ApiGarantiaMecanicaGarantiaMecanica;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::informe-historial.informe-historial': ApiInformeHistorialInformeHistorial;
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina-cookie.pagina-cookie': ApiPaginaCookiePaginaCookie;
@@ -1592,11 +1730,13 @@ declare module '@strapi/strapi' {
       'api::pagina-politica.pagina-politica': ApiPaginaPoliticaPaginaPolitica;
       'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
+      'api::revision.revision': ApiRevisionRevision;
       'api::seguro.seguro': ApiSeguroSeguro;
       'api::service.service': ApiServiceService;
       'api::simulador.simulador': ApiSimuladorSimulador;
       'api::sobre-nosotro.sobre-nosotro': ApiSobreNosotroSobreNosotro;
       'api::soporte.soporte': ApiSoporteSoporte;
+      'api::transfierir-vehiculo.transfierir-vehiculo': ApiTransfierirVehiculoTransfierirVehiculo;
       'api::vender-vehiculo.vender-vehiculo': ApiVenderVehiculoVenderVehiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
