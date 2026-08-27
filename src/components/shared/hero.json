@@ -35,6 +35,9 @@
       "type": "component",
       "component": "shared.carta-ventaja",
       "repeatable": false
+    },
+    "footer": {
+      "type": "blocks"
     }
   },
   "config": {}

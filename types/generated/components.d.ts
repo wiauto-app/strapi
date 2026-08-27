@@ -350,6 +350,7 @@ export interface SharedHero extends Struct.ComponentSchema {
     caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
     card: Schema.Attribute.Component<'shared.carta-ventaja', false>;
     descripcion: Schema.Attribute.Text;
+    footer: Schema.Attribute.Blocks;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     titulo: Schema.Attribute.String;
   };

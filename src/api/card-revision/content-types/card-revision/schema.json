@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "card_revisions",
+  "info": {
+    "singularName": "card-revision",
+    "pluralName": "card-revisions",
+    "displayName": "card-revision"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "card": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    }
+  }
+}
