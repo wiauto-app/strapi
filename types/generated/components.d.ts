@@ -392,6 +392,7 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
   attributes: {
     destacado: Schema.Attribute.Boolean;
+    externo: Schema.Attribute.Boolean;
     iconName: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
@@ -422,6 +423,7 @@ export interface SharedOtroLink extends Struct.ComponentSchema {
   };
   attributes: {
     descripcion: Schema.Attribute.Text & Schema.Attribute.Required;
+    externo: Schema.Attribute.Boolean;
     imagen: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;

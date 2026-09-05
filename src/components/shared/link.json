@@ -29,6 +29,9 @@
     },
     "iconName": {
       "type": "string"
+    },
+    "externo": {
+      "type": "boolean"
     }
   },
   "config": {}

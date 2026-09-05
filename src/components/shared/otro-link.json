@@ -25,6 +25,9 @@
     "url": {
       "type": "text",
       "required": true
+    },
+    "externo": {
+      "type": "boolean"
     }
   },
   "config": {}
