@@ -548,6 +548,56 @@ export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDetalleVehiculoDetalleVehiculo
+  extends Struct.SingleTypeSchema {
+  collectionName: 'detalle_vehiculos';
+  info: {
+    displayName: 'detalle-vehiculo';
+    pluralName: 'detalle-vehiculos';
+    singularName: 'detalle-vehiculo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    colaboraciones: Schema.Attribute.DynamicZone<
+      [
+        'shared.user',
+        'shared.text-field',
+        'shared.seo',
+        'shared.pregunta',
+        'shared.otro-link',
+        'shared.mobile-advertisment',
+        'shared.link',
+        'shared.image',
+        'shared.icon-feature',
+        'shared.hero',
+        'shared.header',
+        'shared.faq',
+        'shared.estadistica',
+        'shared.desplegable',
+        'shared.comment',
+        'shared.carta-ventaja',
+        'shared.bloque-caracteristica',
+        'shared.anuncio',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::detalle-vehiculo.detalle-vehiculo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1775,6 +1825,7 @@ declare module '@strapi/strapi' {
       'api::card-revision.card-revision': ApiCardRevisionCardRevision;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;
       'api::comentario.comentario': ApiComentarioComentario;
+      'api::detalle-vehiculo.detalle-vehiculo': ApiDetalleVehiculoDetalleVehiculo;
       'api::faq.faq': ApiFaqFaq;
       'api::financiacion.financiacion': ApiFinanciacionFinanciacion;
       'api::footer.footer': ApiFooterFooter;
