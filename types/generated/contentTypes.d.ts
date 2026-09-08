@@ -921,14 +921,10 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
   };
   attributes: {
     action_call_section: Schema.Attribute.Component<'shared.hero', false>;
-    caracteristicas: Schema.Attribute.Component<
-      'planes.caracteristicas',
-      false
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    estadisticas: Schema.Attribute.Component<'shared.estadistica', true>;
+    facil_vender: Schema.Attribute.Component<'planes.caracteristicas', false>;
     hero: Schema.Attribute.Component<'shared.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -936,15 +932,11 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
       'api::pagina-plan.pagina-plan'
     > &
       Schema.Attribute.Private;
-    mobile_advertisment: Schema.Attribute.Component<
-      'shared.mobile-advertisment',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
-    tech_add: Schema.Attribute.Component<'planes.tech-add', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ventajas: Schema.Attribute.Component<'planes.caracteristicas', false>;
   };
 }
 

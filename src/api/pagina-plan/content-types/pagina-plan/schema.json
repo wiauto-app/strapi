@@ -16,29 +16,19 @@
       "component": "shared.hero",
       "repeatable": false
     },
-    "estadisticas": {
-      "type": "component",
-      "component": "shared.estadistica",
-      "repeatable": true
-    },
     "action_call_section": {
       "type": "component",
       "component": "shared.hero",
       "repeatable": false
     },
-    "caracteristicas": {
+    "ventajas": {
       "type": "component",
       "component": "planes.caracteristicas",
       "repeatable": false
     },
-    "tech_add": {
+    "facil_vender": {
       "type": "component",
-      "component": "planes.tech-add",
-      "repeatable": false
-    },
-    "mobile_advertisment": {
-      "type": "component",
-      "component": "shared.mobile-advertisment",
+      "component": "planes.caracteristicas",
       "repeatable": false
     }
   }
