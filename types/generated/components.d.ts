@@ -258,6 +258,7 @@ export interface SharedCartaVentaja extends Struct.ComponentSchema {
   };
   attributes: {
     boton: Schema.Attribute.Component<'shared.link', false>;
+    boton_secundario: Schema.Attribute.Component<'shared.link', false>;
     colorFondo: Schema.Attribute.String;
     colorTexto: Schema.Attribute.String;
     descripcion: Schema.Attribute.Text;
