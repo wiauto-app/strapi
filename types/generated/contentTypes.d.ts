@@ -912,7 +912,7 @@ export interface ApiPaginaCookiePaginaCookie extends Struct.SingleTypeSchema {
 export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
   collectionName: 'pagina_plans';
   info: {
-    displayName: 'pagina-plan';
+    displayName: 'pagina plan';
     pluralName: 'pagina-plans';
     singularName: 'pagina-plan';
   };
@@ -921,6 +921,7 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
   };
   attributes: {
     action_call_section: Schema.Attribute.Component<'shared.hero', false>;
+    contact: Schema.Attribute.Component<'shared.carta-ventaja', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

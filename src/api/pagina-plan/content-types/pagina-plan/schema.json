@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pagina-plan",
     "pluralName": "pagina-plans",
-    "displayName": "pagina-plan"
+    "displayName": "pagina plan"
   },
   "options": {
     "draftAndPublish": true
@@ -29,6 +29,11 @@
     "facil_vender": {
       "type": "component",
       "component": "planes.caracteristicas",
+      "repeatable": false
+    },
+    "contact": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
       "repeatable": false
     }
   }
