@@ -394,12 +394,11 @@ export interface SharedLink extends Struct.ComponentSchema {
   attributes: {
     destacado: Schema.Attribute.Boolean;
     externo: Schema.Attribute.Boolean;
+    funcion: Schema.Attribute.Boolean;
     iconName: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    url: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'/'>;
+    url: Schema.Attribute.Text & Schema.Attribute.DefaultTo<'/'>;
   };
 }
 
