@@ -11,32 +11,24 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titulo": {
-      "type": "string"
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "mission": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
     },
     "caracteristicas": {
       "type": "component",
-      "component": "shared.icon-feature",
-      "repeatable": true
-    },
-    "imagen": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "businessCard": {
-      "type": "component",
-      "component": "about.business-card",
+      "component": "planes.caracteristicas",
       "repeatable": false
     },
-    "equipo": {
+    "personas": {
       "type": "component",
-      "component": "about.team",
+      "component": "shared.hero",
       "repeatable": false
     }
   }

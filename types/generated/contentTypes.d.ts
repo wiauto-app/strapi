@@ -560,28 +560,7 @@ export interface ApiDetalleVehiculoDetalleVehiculo
     draftAndPublish: true;
   };
   attributes: {
-    colaboraciones: Schema.Attribute.DynamicZone<
-      [
-        'shared.user',
-        'shared.text-field',
-        'shared.seo',
-        'shared.pregunta',
-        'shared.otro-link',
-        'shared.mobile-advertisment',
-        'shared.link',
-        'shared.image',
-        'shared.icon-feature',
-        'shared.hero',
-        'shared.header',
-        'shared.faq',
-        'shared.estadistica',
-        'shared.desplegable',
-        'shared.comment',
-        'shared.carta-ventaja',
-        'shared.bloque-caracteristica',
-        'shared.anuncio',
-      ]
-    >;
+    colaboraciones: Schema.Attribute.DynamicZone<['shared.hero']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1175,21 +1154,23 @@ export interface ApiSobreNosotroSobreNosotro extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    businessCard: Schema.Attribute.Component<'about.business-card', false>;
-    caracteristicas: Schema.Attribute.Component<'shared.icon-feature', true>;
+    caracteristicas: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    equipo: Schema.Attribute.Component<'about.team', false>;
-    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sobre-nosotro.sobre-nosotro'
     > &
       Schema.Attribute.Private;
+    mission: Schema.Attribute.Component<'shared.hero', false>;
+    personas: Schema.Attribute.Component<'shared.hero', false>;
     publishedAt: Schema.Attribute.DateTime;
-    titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

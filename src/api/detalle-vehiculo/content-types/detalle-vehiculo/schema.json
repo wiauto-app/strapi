@@ -14,24 +14,7 @@
     "colaboraciones": {
       "type": "dynamiczone",
       "components": [
-        "shared.user",
-        "shared.text-field",
-        "shared.seo",
-        "shared.pregunta",
-        "shared.otro-link",
-        "shared.mobile-advertisment",
-        "shared.link",
-        "shared.image",
-        "shared.icon-feature",
-        "shared.hero",
-        "shared.header",
-        "shared.faq",
-        "shared.estadistica",
-        "shared.desplegable",
-        "shared.comment",
-        "shared.carta-ventaja",
-        "shared.bloque-caracteristica",
-        "shared.anuncio"
+        "shared.hero"
       ]
     }
   }
