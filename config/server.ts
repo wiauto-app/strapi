@@ -8,6 +8,11 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server =>
   app: {
     keys: env.array('APP_KEYS'),
   },
+  mcp: {
+    enabled: env.bool('MCP_ENABLED', true),
+    connectTimeoutMs: env.int('MCP_CONNECT_TIMEOUT_MS', 5000),
+    requestTimeoutMs: env.int('MCP_REQUEST_TIMEOUT_MS', 60000),
+  },
 });
 
 export default config;
