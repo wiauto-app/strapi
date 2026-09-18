@@ -806,15 +806,18 @@ export interface ApiLandingsColaboracionLandingsColaboracion
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text;
     hero: Schema.Attribute.Component<'shared.hero', false>;
+    iconName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::landings-colaboracion.landings-colaboracion'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.UID;
+    nombre: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

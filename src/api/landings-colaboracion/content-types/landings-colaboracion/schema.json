@@ -11,8 +11,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nombre": {
+    "slug": {
       "type": "uid"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "iconName": {
+      "type": "string"
     },
     "hero": {
       "type": "component",
