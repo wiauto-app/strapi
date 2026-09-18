@@ -33,6 +33,14 @@
       "type": "component",
       "component": "shared.hero",
       "repeatable": false
+    },
+    "contenido_dinamico": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.hero",
+        "shared.carta-ventaja",
+        "planes.caracteristicas"
+      ]
     }
   }
 }
