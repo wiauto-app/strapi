@@ -10,21 +10,5 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {
-    "hero": {
-      "type": "component",
-      "component": "shared.hero",
-      "repeatable": false
-    },
-    "coche_protegido": {
-      "type": "component",
-      "component": "planes.caracteristicas",
-      "repeatable": false
-    },
-    "mas_que_garantia": {
-      "type": "component",
-      "component": "planes.caracteristicas",
-      "repeatable": false
-    }
-  }
+  "attributes": {}
 }

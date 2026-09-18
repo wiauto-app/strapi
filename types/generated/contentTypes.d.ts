@@ -693,24 +693,15 @@ export interface ApiGarantiaMecanicaGarantiaMecanica
     draftAndPublish: true;
   };
   attributes: {
-    coche_protegido: Schema.Attribute.Component<
-      'planes.caracteristicas',
-      false
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'shared.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::garantia-mecanica.garantia-mecanica'
     > &
       Schema.Attribute.Private;
-    mas_que_garantia: Schema.Attribute.Component<
-      'planes.caracteristicas',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -784,6 +775,42 @@ export interface ApiInformeHistorialInformeHistorial
       'api::informe-historial.informe-historial'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLandingsColaboracionLandingsColaboracion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'landings_colaboracions';
+  info: {
+    displayName: 'landings colaboracion';
+    pluralName: 'landings-colaboracions';
+    singularName: 'landings-colaboracion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    caracteristicas: Schema.Attribute.Component<
+      'planes.caracteristicas',
+      false
+    >;
+    contenido: Schema.Attribute.Component<'shared.hero', false>;
+    contenido_extra: Schema.Attribute.Component<'shared.hero', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landings-colaboracion.landings-colaboracion'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.UID;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1819,6 +1846,7 @@ declare module '@strapi/strapi' {
       'api::garantia-mecanica.garantia-mecanica': ApiGarantiaMecanicaGarantiaMecanica;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::informe-historial.informe-historial': ApiInformeHistorialInformeHistorial;
+      'api::landings-colaboracion.landings-colaboracion': ApiLandingsColaboracionLandingsColaboracion;
       'api::noticia-prensa.noticia-prensa': ApiNoticiaPrensaNoticiaPrensa;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina-cookie.pagina-cookie': ApiPaginaCookiePaginaCookie;
