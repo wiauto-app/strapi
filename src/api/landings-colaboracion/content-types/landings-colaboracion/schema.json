@@ -50,6 +50,9 @@
         "shared.carta-ventaja",
         "planes.caracteristicas"
       ]
+    },
+    "key": {
+      "type": "string"
     }
   }
 }

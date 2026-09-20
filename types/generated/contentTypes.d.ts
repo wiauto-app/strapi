@@ -809,6 +809,7 @@ export interface ApiLandingsColaboracionLandingsColaboracion
     descripcion: Schema.Attribute.Text;
     hero: Schema.Attribute.Component<'shared.hero', false>;
     iconName: Schema.Attribute.String;
+    key: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
