@@ -337,6 +337,7 @@ export interface SharedHeader extends Struct.ComponentSchema {
   attributes: {
     busqueda: Schema.Attribute.Component<'shared.text-field', false>;
     descripcion: Schema.Attribute.String;
+    marcas: Schema.Attribute.Component<'shared.link', true>;
     titulo: Schema.Attribute.String;
   };
 }
@@ -399,6 +400,16 @@ export interface SharedLink extends Struct.ComponentSchema {
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.Text & Schema.Attribute.DefaultTo<'/'>;
+  };
+}
+
+export interface SharedMarcas extends Struct.ComponentSchema {
+  collectionName: 'components_shared_marcas';
+  info: {
+    displayName: 'marcas';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'shared.header', false>;
   };
 }
 
@@ -630,6 +641,7 @@ declare module '@strapi/strapi' {
       'shared.icon-feature': SharedIconFeature;
       'shared.image': SharedImage;
       'shared.link': SharedLink;
+      'shared.marcas': SharedMarcas;
       'shared.mobile-advertisment': SharedMobileAdvertisment;
       'shared.otro-link': SharedOtroLink;
       'shared.pregunta': SharedPregunta;

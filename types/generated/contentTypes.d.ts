@@ -800,7 +800,12 @@ export interface ApiLandingsColaboracionLandingsColaboracion
     >;
     contenido: Schema.Attribute.Component<'shared.hero', false>;
     contenido_dinamico: Schema.Attribute.DynamicZone<
-      ['shared.hero', 'shared.carta-ventaja', 'planes.caracteristicas']
+      [
+        'shared.hero',
+        'shared.carta-ventaja',
+        'planes.caracteristicas',
+        'shared.marcas',
+      ]
     >;
     contenido_extra: Schema.Attribute.Component<'shared.hero', false>;
     createdAt: Schema.Attribute.DateTime;

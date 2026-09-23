@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_marcas",
+  "info": {
+    "displayName": "marcas"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

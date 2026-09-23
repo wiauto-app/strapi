@@ -48,7 +48,8 @@
       "components": [
         "shared.hero",
         "shared.carta-ventaja",
-        "planes.caracteristicas"
+        "planes.caracteristicas",
+        "shared.marcas"
       ]
     },
     "key": {
