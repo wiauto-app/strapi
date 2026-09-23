@@ -337,7 +337,6 @@ export interface SharedHeader extends Struct.ComponentSchema {
   attributes: {
     busqueda: Schema.Attribute.Component<'shared.text-field', false>;
     descripcion: Schema.Attribute.String;
-    marcas: Schema.Attribute.Component<'shared.link', true>;
     titulo: Schema.Attribute.String;
   };
 }
@@ -410,6 +409,7 @@ export interface SharedMarcas extends Struct.ComponentSchema {
   };
   attributes: {
     header: Schema.Attribute.Component<'shared.header', false>;
+    marcas: Schema.Attribute.Component<'shared.carta-ventaja', true>;
   };
 }
 

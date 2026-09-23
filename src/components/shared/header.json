@@ -15,11 +15,6 @@
       "type": "component",
       "component": "shared.text-field",
       "repeatable": false
-    },
-    "marcas": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
     }
   },
   "config": {}

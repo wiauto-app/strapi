@@ -9,6 +9,11 @@
       "type": "component",
       "component": "shared.header",
       "repeatable": false
+    },
+    "marcas": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
     }
   },
   "config": {}
