@@ -12,7 +12,7 @@
     },
     "marcas": {
       "type": "component",
-      "component": "shared.carta-ventaja",
+      "component": "shared.link",
       "repeatable": true
     }
   },

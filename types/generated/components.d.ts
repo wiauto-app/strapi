@@ -409,7 +409,7 @@ export interface SharedMarcas extends Struct.ComponentSchema {
   };
   attributes: {
     header: Schema.Attribute.Component<'shared.header', false>;
-    marcas: Schema.Attribute.Component<'shared.carta-ventaja', true>;
+    marcas: Schema.Attribute.Component<'shared.link', true>;
   };
 }
 
