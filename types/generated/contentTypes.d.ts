@@ -943,7 +943,7 @@ export interface ApiPaginaCookiePaginaCookie extends Struct.SingleTypeSchema {
 export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
   collectionName: 'pagina_plans';
   info: {
-    displayName: 'pagina plan';
+    displayName: 'pagina planes';
     pluralName: 'pagina-plans';
     singularName: 'pagina-plan';
   };
@@ -969,6 +969,9 @@ export interface ApiPaginaPlanPaginaPlan extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ventajas: Schema.Attribute.Component<'planes.caracteristicas', false>;
+    wiauto_match: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pagina-plan",
     "pluralName": "pagina-plans",
-    "displayName": "pagina plan"
+    "displayName": "pagina planes"
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +25,16 @@
       "type": "component",
       "component": "planes.caracteristicas",
       "repeatable": false
+    },
+    "wiauto_match": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "facil_vender": {
       "type": "component",
