@@ -57,6 +57,10 @@
       "type": "component",
       "component": "ui.mensajes-accion",
       "repeatable": false
+    },
+    "texto_cargando": {
+      "type": "string",
+      "default": "Cargando verificación..."
     }
   },
   "config": {}

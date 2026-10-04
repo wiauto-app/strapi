@@ -35,9 +35,15 @@ export interface AuthCambiarContrasena extends Struct.ComponentSchema {
     boton: Schema.Attribute.Component<'ui.boton', false>;
     boton_limpiar: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Limpiar'>;
+    boton_solicitar_enlace: Schema.Attribute.Component<'shared.link', false>;
     confirmar_contrasena: Schema.Attribute.Component<'formulario.campo', false>;
     contrasena: Schema.Attribute.Component<'formulario.campo', false>;
     encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    encabezado_enlace_invalido: Schema.Attribute.Component<
+      'ui.encabezado',
+      false
+    >;
+    enlace_volver: Schema.Attribute.Component<'shared.link', false>;
     mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
     pie: Schema.Attribute.Component<'ui.texto-enlace', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
@@ -156,6 +162,8 @@ export interface AuthVerificacion2Fa extends Struct.ComponentSchema {
     mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
     mensajes_respaldo: Schema.Attribute.Component<'ui.mensajes-accion', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    texto_cargando: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Cargando verificaci\u00F3n...'>;
   };
 }
 

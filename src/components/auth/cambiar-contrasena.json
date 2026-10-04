@@ -44,6 +44,21 @@
       "type": "component",
       "component": "ui.mensajes-accion",
       "repeatable": false
+    },
+    "encabezado_enlace_invalido": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "boton_solicitar_enlace": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "enlace_volver": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
     }
   },
   "config": {}
