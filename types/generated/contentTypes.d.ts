@@ -443,6 +443,53 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAutenticacionAutenticacion extends Struct.SingleTypeSchema {
+  collectionName: 'autenticaciones';
+  info: {
+    description: 'Textos de las pantallas de autenticaci\u00F3n';
+    displayName: 'autenticacion';
+    pluralName: 'autenticaciones';
+    singularName: 'autenticacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cambiar_contrasena: Schema.Attribute.Component<
+      'auth.cambiar-contrasena',
+      false
+    >;
+    compartido: Schema.Attribute.Component<'auth.compartido', false>;
+    confirmar_correo: Schema.Attribute.Component<
+      'auth.confirmar-correo',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::autenticacion.autenticacion'
+    > &
+      Schema.Attribute.Private;
+    login: Schema.Attribute.Component<'auth.login', false>;
+    olvide_contrasena: Schema.Attribute.Component<
+      'auth.olvide-contrasena',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    registro: Schema.Attribute.Component<'auth.registro', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    verificacion_2fa: Schema.Attribute.Component<
+      'auth.verificacion-2fa',
+      false
+    >;
+  };
+}
+
 export interface ApiCardGarantiaCardGarantia extends Struct.SingleTypeSchema {
   collectionName: 'card_garantias';
   info: {
@@ -1850,6 +1897,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::autenticacion.autenticacion': ApiAutenticacionAutenticacion;
       'api::card-garantia.card-garantia': ApiCardGarantiaCardGarantia;
       'api::card-revision.card-revision': ApiCardRevisionCardRevision;
       'api::categoria-noticia.categoria-noticia': ApiCategoriaNoticiaCategoriaNoticia;

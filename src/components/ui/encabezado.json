@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_encabezados",
+  "info": {
+    "displayName": "encabezado",
+    "description": "Título y descripción de una sección o pantalla"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

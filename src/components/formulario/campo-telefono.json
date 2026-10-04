@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_formulario_campo_telefonos",
+  "info": {
+    "displayName": "campo-telefono",
+    "description": "Campo de teléfono con prefijo de país"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Teléfono"
+    },
+    "label_numero": {
+      "type": "string",
+      "default": "Número de teléfono"
+    },
+    "placeholder_numero": {
+      "type": "string",
+      "default": "Número de móvil"
+    },
+    "mensaje_requerido": {
+      "type": "string",
+      "default": "El teléfono es requerido"
+    },
+    "mensaje_invalido": {
+      "type": "string",
+      "default": "El teléfono solo puede contener dígitos"
+    },
+    "mensaje_longitud": {
+      "type": "string",
+      "default": "El teléfono tiene demasiados dígitos"
+    },
+    "mensaje_prefijo_requerido": {
+      "type": "string",
+      "default": "El código de teléfono es requerido"
+    }
+  },
+  "config": {}
+}

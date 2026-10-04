@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_auth_verificacion_2fas",
+  "info": {
+    "displayName": "verificacion-2fa",
+    "description": "Pantalla /verificacion-2fa"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "codigo": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "boton_verificar": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "codigo_respaldo": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "boton_verificar_respaldo": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "boton_usar_respaldo": {
+      "type": "string",
+      "default": "Usar código de respaldo"
+    },
+    "boton_usar_autenticador": {
+      "type": "string",
+      "default": "Usar código del autenticador"
+    },
+    "boton_volver": {
+      "type": "string",
+      "default": "Volver al inicio de sesión"
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    },
+    "mensajes_respaldo": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

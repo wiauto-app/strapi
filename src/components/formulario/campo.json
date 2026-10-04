@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_formulario_campos",
+  "info": {
+    "displayName": "campo",
+    "description": "Campo de formulario: textos y mensajes de validación"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "ayuda": {
+      "type": "text"
+    },
+    "mensaje_requerido": {
+      "type": "string"
+    },
+    "mensaje_invalido": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_auth_compartidos",
+  "info": {
+    "displayName": "compartido",
+    "description": "Textos comunes a todas las pantallas de autenticación"
+  },
+  "options": {},
+  "attributes": {
+    "panel_titulo": {
+      "type": "text",
+      "default": "Encuentra o vende tu próximo coche hoy!"
+    },
+    "separador": {
+      "type": "string",
+      "default": "o"
+    },
+    "boton_google": {
+      "type": "string",
+      "default": "Continuar con Google"
+    },
+    "boton_apple": {
+      "type": "string",
+      "default": "Continuar con Apple ID"
+    }
+  },
+  "config": {}
+}

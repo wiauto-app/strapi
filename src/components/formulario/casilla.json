@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_formulario_casillas",
+  "info": {
+    "displayName": "casilla",
+    "description": "Checkbox con texto enriquecido (admite enlaces)"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "blocks"
+    },
+    "mensaje_requerido": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

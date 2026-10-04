@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_texto_enlaces",
+  "info": {
+    "displayName": "texto-enlace",
+    "description": "Texto seguido de un enlace (ej: ¿Ya tienes cuenta? Inicia sesión)"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string"
+    },
+    "enlace": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_auth_confirmar_correos",
+  "info": {
+    "displayName": "confirmar-correo",
+    "description": "Pantalla /confirmar-correo"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "ayuda": {
+      "type": "text",
+      "default": "Si no lo ves, revisa la carpeta de spam o solicita un nuevo enlace desde la pantalla de inicio de sesión."
+    },
+    "boton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "pie": {
+      "type": "component",
+      "component": "ui.texto-enlace",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

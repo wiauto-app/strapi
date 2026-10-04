@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_auth_cambiar_contrasenas",
+  "info": {
+    "displayName": "cambiar-contrasena",
+    "description": "Pantalla /cambiar-contrasena"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "contrasena": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "confirmar_contrasena": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "boton": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "boton_limpiar": {
+      "type": "string",
+      "default": "Limpiar"
+    },
+    "pie": {
+      "type": "component",
+      "component": "ui.texto-enlace",
+      "repeatable": false
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

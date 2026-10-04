@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_ui_mensajes_acciones",
+  "info": {
+    "displayName": "mensajes-accion",
+    "description": "Toasts de resultado de una acción (enviar formulario, guardar...)"
+  },
+  "options": {},
+  "attributes": {
+    "exito": {
+      "type": "string"
+    },
+    "error_generico": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

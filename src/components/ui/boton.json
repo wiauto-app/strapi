@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_botones",
+  "info": {
+    "displayName": "boton",
+    "description": "Botón de acción con texto de estado cargando"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "label_cargando": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

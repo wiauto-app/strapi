@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_avisos",
+  "info": {
+    "displayName": "aviso",
+    "description": "Mensaje destacado dentro de la página"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "text",
+      "required": true
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "exito",
+        "alerta",
+        "error"
+      ],
+      "default": "info"
+    }
+  },
+  "config": {}
+}

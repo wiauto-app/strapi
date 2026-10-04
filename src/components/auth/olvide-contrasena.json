@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_auth_olvide_contrasenas",
+  "info": {
+    "displayName": "olvide-contrasena",
+    "description": "Pantalla /olvide-contrasena"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "encabezado_enviado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "email": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "boton": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "enlace_volver": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

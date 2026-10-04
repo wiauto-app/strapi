@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_auth_logines",
+  "info": {
+    "displayName": "login",
+    "description": "Pantalla /iniciar-sesion"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "email": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "contrasena": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "recordar_sesion": {
+      "type": "component",
+      "component": "formulario.casilla",
+      "repeatable": false
+    },
+    "boton": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "pie": {
+      "type": "component",
+      "component": "ui.texto-enlace",
+      "repeatable": false
+    },
+    "enlace_olvide_contrasena": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -25,6 +25,140 @@ export interface AboutTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface AuthCambiarContrasena extends Struct.ComponentSchema {
+  collectionName: 'components_auth_cambiar_contrasenas';
+  info: {
+    description: 'Pantalla /cambiar-contrasena';
+    displayName: 'cambiar-contrasena';
+  };
+  attributes: {
+    boton: Schema.Attribute.Component<'ui.boton', false>;
+    boton_limpiar: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Limpiar'>;
+    confirmar_contrasena: Schema.Attribute.Component<'formulario.campo', false>;
+    contrasena: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    pie: Schema.Attribute.Component<'ui.texto-enlace', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+  };
+}
+
+export interface AuthCompartido extends Struct.ComponentSchema {
+  collectionName: 'components_auth_compartidos';
+  info: {
+    description: 'Textos comunes a todas las pantallas de autenticaci\u00F3n';
+    displayName: 'compartido';
+  };
+  attributes: {
+    boton_apple: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Continuar con Apple ID'>;
+    boton_google: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Continuar con Google'>;
+    panel_titulo: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Encuentra o vende tu pr\u00F3ximo coche hoy!'>;
+    separador: Schema.Attribute.String & Schema.Attribute.DefaultTo<'o'>;
+  };
+}
+
+export interface AuthConfirmarCorreo extends Struct.ComponentSchema {
+  collectionName: 'components_auth_confirmar_correos';
+  info: {
+    description: 'Pantalla /confirmar-correo';
+    displayName: 'confirmar-correo';
+  };
+  attributes: {
+    ayuda: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Si no lo ves, revisa la carpeta de spam o solicita un nuevo enlace desde la pantalla de inicio de sesi\u00F3n.'>;
+    boton: Schema.Attribute.Component<'shared.link', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    pie: Schema.Attribute.Component<'ui.texto-enlace', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+  };
+}
+
+export interface AuthLogin extends Struct.ComponentSchema {
+  collectionName: 'components_auth_logines';
+  info: {
+    description: 'Pantalla /iniciar-sesion';
+    displayName: 'login';
+  };
+  attributes: {
+    boton: Schema.Attribute.Component<'ui.boton', false>;
+    contrasena: Schema.Attribute.Component<'formulario.campo', false>;
+    email: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    enlace_olvide_contrasena: Schema.Attribute.Component<'shared.link', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    pie: Schema.Attribute.Component<'ui.texto-enlace', false>;
+    recordar_sesion: Schema.Attribute.Component<'formulario.casilla', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+  };
+}
+
+export interface AuthOlvideContrasena extends Struct.ComponentSchema {
+  collectionName: 'components_auth_olvide_contrasenas';
+  info: {
+    description: 'Pantalla /olvide-contrasena';
+    displayName: 'olvide-contrasena';
+  };
+  attributes: {
+    boton: Schema.Attribute.Component<'ui.boton', false>;
+    email: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    encabezado_enviado: Schema.Attribute.Component<'ui.encabezado', false>;
+    enlace_volver: Schema.Attribute.Component<'shared.link', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+  };
+}
+
+export interface AuthRegistro extends Struct.ComponentSchema {
+  collectionName: 'components_auth_registros';
+  info: {
+    description: 'Pantalla /registro';
+    displayName: 'registro';
+  };
+  attributes: {
+    apellidos: Schema.Attribute.Component<'formulario.campo', false>;
+    aviso_invitacion: Schema.Attribute.Component<'ui.aviso', false>;
+    boton: Schema.Attribute.Component<'ui.boton', false>;
+    contrasena: Schema.Attribute.Component<'formulario.campo', false>;
+    email: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    nombre: Schema.Attribute.Component<'formulario.campo', false>;
+    pie: Schema.Attribute.Component<'ui.texto-enlace', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    telefono: Schema.Attribute.Component<'formulario.campo-telefono', false>;
+    terminos: Schema.Attribute.Component<'formulario.casilla', false>;
+  };
+}
+
+export interface AuthVerificacion2Fa extends Struct.ComponentSchema {
+  collectionName: 'components_auth_verificacion_2fas';
+  info: {
+    description: 'Pantalla /verificacion-2fa';
+    displayName: 'verificacion-2fa';
+  };
+  attributes: {
+    boton_usar_autenticador: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Usar c\u00F3digo del autenticador'>;
+    boton_usar_respaldo: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Usar c\u00F3digo de respaldo'>;
+    boton_verificar: Schema.Attribute.Component<'ui.boton', false>;
+    boton_verificar_respaldo: Schema.Attribute.Component<'ui.boton', false>;
+    boton_volver: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Volver al inicio de sesi\u00F3n'>;
+    codigo: Schema.Attribute.Component<'formulario.campo', false>;
+    codigo_respaldo: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    mensajes_respaldo: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+  };
+}
+
 export interface BillingPlan extends Struct.ComponentSchema {
   collectionName: 'components_billing_plans';
   info: {
@@ -94,6 +228,57 @@ export interface FooterFooterSection extends Struct.ComponentSchema {
   attributes: {
     links: Schema.Attribute.Component<'shared.link', true>;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface FormularioCampo extends Struct.ComponentSchema {
+  collectionName: 'components_formulario_campos';
+  info: {
+    description: 'Campo de formulario: textos y mensajes de validaci\u00F3n';
+    displayName: 'campo';
+  };
+  attributes: {
+    ayuda: Schema.Attribute.Text;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    mensaje_invalido: Schema.Attribute.String;
+    mensaje_requerido: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
+  };
+}
+
+export interface FormularioCampoTelefono extends Struct.ComponentSchema {
+  collectionName: 'components_formulario_campo_telefonos';
+  info: {
+    description: 'Campo de tel\u00E9fono con prefijo de pa\u00EDs';
+    displayName: 'campo-telefono';
+  };
+  attributes: {
+    label: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Tel\u00E9fono'>;
+    label_numero: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'N\u00FAmero de tel\u00E9fono'>;
+    mensaje_invalido: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'El tel\u00E9fono solo puede contener d\u00EDgitos'>;
+    mensaje_longitud: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'El tel\u00E9fono tiene demasiados d\u00EDgitos'>;
+    mensaje_prefijo_requerido: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'El c\u00F3digo de tel\u00E9fono es requerido'>;
+    mensaje_requerido: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'El tel\u00E9fono es requerido'>;
+    placeholder_numero: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'N\u00FAmero de m\u00F3vil'>;
+  };
+}
+
+export interface FormularioCasilla extends Struct.ComponentSchema {
+  collectionName: 'components_formulario_casillas';
+  info: {
+    description: 'Checkbox con texto enriquecido (admite enlaces)';
+    displayName: 'casilla';
+  };
+  attributes: {
+    mensaje_requerido: Schema.Attribute.String;
+    texto: Schema.Attribute.Blocks;
   };
 }
 
@@ -463,10 +648,20 @@ export interface SharedSeo extends Struct.ComponentSchema {
     keywords: Schema.Attribute.Text;
     metaDescription: Schema.Attribute.Text;
     metaTitle: Schema.Attribute.String;
+    noFollow: Schema.Attribute.Boolean;
     noIndex: Schema.Attribute.Boolean;
+    ogDescription: Schema.Attribute.Text;
+    ogTitle: Schema.Attribute.String;
+    ogType: Schema.Attribute.Enumeration<['website', 'article']> &
+      Schema.Attribute.DefaultTo<'website'>;
     shareImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    structuredData: Schema.Attribute.JSON;
+    twitterCard: Schema.Attribute.Enumeration<
+      ['summary', 'summary_large_image']
+    > &
+      Schema.Attribute.DefaultTo<'summary_large_image'>;
   };
 }
 
@@ -534,6 +729,67 @@ export interface SoportePreguntas extends Struct.ComponentSchema {
   attributes: {
     header: Schema.Attribute.Component<'shared.header', false>;
     preguntas: Schema.Attribute.Component<'shared.pregunta', true>;
+  };
+}
+
+export interface UiAviso extends Struct.ComponentSchema {
+  collectionName: 'components_ui_avisos';
+  info: {
+    description: 'Mensaje destacado dentro de la p\u00E1gina';
+    displayName: 'aviso';
+  };
+  attributes: {
+    texto: Schema.Attribute.Text & Schema.Attribute.Required;
+    tipo: Schema.Attribute.Enumeration<['info', 'exito', 'alerta', 'error']> &
+      Schema.Attribute.DefaultTo<'info'>;
+  };
+}
+
+export interface UiBoton extends Struct.ComponentSchema {
+  collectionName: 'components_ui_botones';
+  info: {
+    description: 'Bot\u00F3n de acci\u00F3n con texto de estado cargando';
+    displayName: 'boton';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    label_cargando: Schema.Attribute.String;
+  };
+}
+
+export interface UiEncabezado extends Struct.ComponentSchema {
+  collectionName: 'components_ui_encabezados';
+  info: {
+    description: 'T\u00EDtulo y descripci\u00F3n de una secci\u00F3n o pantalla';
+    displayName: 'encabezado';
+  };
+  attributes: {
+    descripcion: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface UiMensajesAccion extends Struct.ComponentSchema {
+  collectionName: 'components_ui_mensajes_acciones';
+  info: {
+    description: 'Toasts de resultado de una acci\u00F3n (enviar formulario, guardar...)';
+    displayName: 'mensajes-accion';
+  };
+  attributes: {
+    error_generico: Schema.Attribute.String;
+    exito: Schema.Attribute.String;
+  };
+}
+
+export interface UiTextoEnlace extends Struct.ComponentSchema {
+  collectionName: 'components_ui_texto_enlaces';
+  info: {
+    description: 'Texto seguido de un enlace (ej: \u00BFYa tienes cuenta? Inicia sesi\u00F3n)';
+    displayName: 'texto-enlace';
+  };
+  attributes: {
+    enlace: Schema.Attribute.Component<'shared.link', false>;
+    texto: Schema.Attribute.String;
   };
 }
 
@@ -613,12 +869,22 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.business-card': AboutBusinessCard;
       'about.team': AboutTeam;
+      'auth.cambiar-contrasena': AuthCambiarContrasena;
+      'auth.compartido': AuthCompartido;
+      'auth.confirmar-correo': AuthConfirmarCorreo;
+      'auth.login': AuthLogin;
+      'auth.olvide-contrasena': AuthOlvideContrasena;
+      'auth.registro': AuthRegistro;
+      'auth.verificacion-2fa': AuthVerificacion2Fa;
       'billing.plan': BillingPlan;
       'billing.plan-item': BillingPlanItem;
       'billing.precios': BillingPrecios;
       'financiacion.advantages': FinanciacionAdvantages;
       'financiacion.steps': FinanciacionSteps;
       'footer.footer-section': FooterFooterSection;
+      'formulario.campo': FormularioCampo;
+      'formulario.campo-telefono': FormularioCampoTelefono;
+      'formulario.casilla': FormularioCasilla;
       'home.app-advertisment': HomeAppAdvertisment;
       'home.features-section': HomeFeaturesSection;
       'home.hero': HomeHero;
@@ -652,6 +918,11 @@ declare module '@strapi/strapi' {
       'simulador.reasons': SimuladorReasons;
       'soporte.channels': SoporteChannels;
       'soporte.preguntas': SoportePreguntas;
+      'ui.aviso': UiAviso;
+      'ui.boton': UiBoton;
+      'ui.encabezado': UiEncabezado;
+      'ui.mensajes-accion': UiMensajesAccion;
+      'ui.texto-enlace': UiTextoEnlace;
       'vender-vehiculo.comparacion': VenderVehiculoComparacion;
       'vender-vehiculo.consejos': VenderVehiculoConsejos;
       'vender-vehiculo.faqs': VenderVehiculoFaqs;

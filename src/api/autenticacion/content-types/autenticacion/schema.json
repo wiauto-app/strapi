@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "autenticaciones",
+  "info": {
+    "singularName": "autenticacion",
+    "pluralName": "autenticaciones",
+    "displayName": "autenticacion",
+    "description": "Textos de las pantallas de autenticación"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "compartido": {
+      "type": "component",
+      "component": "auth.compartido",
+      "repeatable": false
+    },
+    "registro": {
+      "type": "component",
+      "component": "auth.registro",
+      "repeatable": false
+    },
+    "login": {
+      "type": "component",
+      "component": "auth.login",
+      "repeatable": false
+    },
+    "olvide_contrasena": {
+      "type": "component",
+      "component": "auth.olvide-contrasena",
+      "repeatable": false
+    },
+    "cambiar_contrasena": {
+      "type": "component",
+      "component": "auth.cambiar-contrasena",
+      "repeatable": false
+    },
+    "confirmar_correo": {
+      "type": "component",
+      "component": "auth.confirmar-correo",
+      "repeatable": false
+    },
+    "verificacion_2fa": {
+      "type": "component",
+      "component": "auth.verificacion-2fa",
+      "repeatable": false
+    }
+  }
+}
