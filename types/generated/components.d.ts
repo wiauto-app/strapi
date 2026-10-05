@@ -740,6 +740,114 @@ export interface SoportePreguntas extends Struct.ComponentSchema {
   };
 }
 
+export interface TasadorFormulario extends Struct.ComponentSchema {
+  collectionName: 'components_tasador_formularios';
+  info: {
+    description: 'Textos del formulario de tasaci\u00F3n: veh\u00EDculo y contacto';
+    displayName: 'formulario';
+  };
+  attributes: {
+    anio: Schema.Attribute.Component<'formulario.campo', false>;
+    apellidos: Schema.Attribute.Component<'formulario.campo', false>;
+    boton: Schema.Attribute.Component<'ui.boton', false>;
+    combustible: Schema.Attribute.Component<'formulario.campo', false>;
+    email: Schema.Attribute.Component<'formulario.campo', false>;
+    encabezado_contacto: Schema.Attribute.Component<'ui.encabezado', false>;
+    encabezado_vehiculo: Schema.Attribute.Component<'ui.encabezado', false>;
+    kilometraje: Schema.Attribute.Component<'formulario.campo', false>;
+    marca: Schema.Attribute.Component<'formulario.campo', false>;
+    matricula: Schema.Attribute.Component<'formulario.campo', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    modelo: Schema.Attribute.Component<'formulario.campo', false>;
+    nombre: Schema.Attribute.Component<'formulario.campo', false>;
+    potencia: Schema.Attribute.Component<'formulario.campo', false>;
+    telefono: Schema.Attribute.Component<'formulario.campo-telefono', false>;
+    transmision: Schema.Attribute.Component<'formulario.campo', false>;
+    version: Schema.Attribute.Component<'formulario.campo', false>;
+  };
+}
+
+export interface TasadorOfertas extends Struct.ComponentSchema {
+  collectionName: 'components_tasador_ofertases';
+  info: {
+    description: 'Textos del flujo de ofertas de concesionarios';
+    displayName: 'ofertas';
+  };
+  attributes: {
+    boton_aceptar: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Aceptar oferta'>;
+    boton_rechazar: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Rechazar'>;
+    confirmar_aceptar: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Al aceptar, compartiremos tus datos de contacto con este concesionario y el resto de ofertas se cerrar\u00E1n.'>;
+    encabezado_enviado: Schema.Attribute.Component<'ui.encabezado', false>;
+    encabezado_ofertas: Schema.Attribute.Component<'ui.encabezado', false>;
+    enlace_ver_ofertas: Schema.Attribute.Component<'shared.link', false>;
+    mensajes: Schema.Attribute.Component<'ui.mensajes-accion', false>;
+    sin_ofertas: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Todav\u00EDa no has recibido ofertas. Te avisaremos en cuanto un concesionario oferte.'>;
+  };
+}
+
+export interface TasadorOpcion extends Struct.ComponentSchema {
+  collectionName: 'components_tasador_opciones';
+  info: {
+    description: 'Card de una opci\u00F3n tras tasar (publicar o recibir ofertas)';
+    displayName: 'opcion';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    boton: Schema.Attribute.Component<'shared.link', false>;
+    descripcion: Schema.Attribute.Text;
+    iconName: Schema.Attribute.String;
+    puntos: Schema.Attribute.Component<'shared.icon-feature', true>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface TasadorOpciones extends Struct.ComponentSchema {
+  collectionName: 'components_tasador_opcioneses';
+  info: {
+    description: 'Bloque \u00BFQu\u00E9 quieres hacer con tu coche?';
+    displayName: 'opciones';
+  };
+  attributes: {
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    publicar: Schema.Attribute.Component<'tasador.opcion', false>;
+    recibir_ofertas: Schema.Attribute.Component<'tasador.opcion', false>;
+  };
+}
+
+export interface TasadorResultado extends Struct.ComponentSchema {
+  collectionName: 'components_tasador_resultados';
+  info: {
+    description: 'Textos del resultado de la tasaci\u00F3n con IA';
+    displayName: 'resultado';
+  };
+  attributes: {
+    aviso_ia: Schema.Attribute.Component<'ui.aviso', false>;
+    boton_modificar: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Modificar datos'>;
+    confianza_alta: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Alta'>;
+    confianza_baja: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Baja'>;
+    confianza_media: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Media'>;
+    encabezado: Schema.Attribute.Component<'ui.encabezado', false>;
+    label_confianza: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Confianza'>;
+    label_precio_alto: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Precio alto'>;
+    label_precio_bajo: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Precio bajo'>;
+    label_precio_mercado: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Precio de mercado'>;
+    titulo_explicacion: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Recomendaci\u00F3n IA'>;
+  };
+}
+
 export interface UiAviso extends Struct.ComponentSchema {
   collectionName: 'components_ui_avisos';
   info: {
@@ -926,6 +1034,11 @@ declare module '@strapi/strapi' {
       'simulador.reasons': SimuladorReasons;
       'soporte.channels': SoporteChannels;
       'soporte.preguntas': SoportePreguntas;
+      'tasador.formulario': TasadorFormulario;
+      'tasador.ofertas': TasadorOfertas;
+      'tasador.opcion': TasadorOpcion;
+      'tasador.opciones': TasadorOpciones;
+      'tasador.resultado': TasadorResultado;
       'ui.aviso': UiAviso;
       'ui.boton': UiBoton;
       'ui.encabezado': UiEncabezado;

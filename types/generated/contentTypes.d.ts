@@ -1052,6 +1052,43 @@ export interface ApiPaginaPoliticaPaginaPolitica
   };
 }
 
+export interface ApiPaginaTasadorPaginaTasador extends Struct.SingleTypeSchema {
+  collectionName: 'pagina_tasadores';
+  info: {
+    description: 'Landing del tasador de coches con IA';
+    displayName: 'pagina tasador';
+    pluralName: 'pagina-tasadores';
+    singularName: 'pagina-tasador';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aviso_privacidad: Schema.Attribute.Component<'shared.carta-ventaja', false>;
+    como_funciona: Schema.Attribute.Component<'planes.caracteristicas', false>;
+    confianza: Schema.Attribute.Component<'shared.icon-feature', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formulario: Schema.Attribute.Component<'tasador.formulario', false>;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-tasador.pagina-tasador'
+    > &
+      Schema.Attribute.Private;
+    ofertas: Schema.Attribute.Component<'tasador.ofertas', false>;
+    opciones: Schema.Attribute.Component<'tasador.opciones', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    resultado: Schema.Attribute.Component<'tasador.resultado', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaginaTerminoPaginaTermino extends Struct.SingleTypeSchema {
   collectionName: 'pagina_terminos';
   info: {
@@ -1915,6 +1952,7 @@ declare module '@strapi/strapi' {
       'api::pagina-cookie.pagina-cookie': ApiPaginaCookiePaginaCookie;
       'api::pagina-plan.pagina-plan': ApiPaginaPlanPaginaPlan;
       'api::pagina-politica.pagina-politica': ApiPaginaPoliticaPaginaPolitica;
+      'api::pagina-tasador.pagina-tasador': ApiPaginaTasadorPaginaTasador;
       'api::pagina-termino.pagina-termino': ApiPaginaTerminoPaginaTermino;
       'api::pregunta-frecuente.pregunta-frecuente': ApiPreguntaFrecuentePreguntaFrecuente;
       'api::revision.revision': ApiRevisionRevision;
