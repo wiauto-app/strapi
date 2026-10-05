@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_tasador_resultados",
+  "info": {
+    "displayName": "resultado",
+    "description": "Textos del resultado de la tasación con IA"
+  },
+  "options": {},
+  "attributes": {
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "label_precio_bajo": {
+      "type": "string",
+      "default": "Precio bajo"
+    },
+    "label_precio_mercado": {
+      "type": "string",
+      "default": "Precio de mercado"
+    },
+    "label_precio_alto": {
+      "type": "string",
+      "default": "Precio alto"
+    },
+    "titulo_explicacion": {
+      "type": "string",
+      "default": "Recomendación IA"
+    },
+    "label_confianza": {
+      "type": "string",
+      "default": "Confianza"
+    },
+    "confianza_alta": {
+      "type": "string",
+      "default": "Alta"
+    },
+    "confianza_media": {
+      "type": "string",
+      "default": "Media"
+    },
+    "confianza_baja": {
+      "type": "string",
+      "default": "Baja"
+    },
+    "aviso_ia": {
+      "type": "component",
+      "component": "ui.aviso",
+      "repeatable": false
+    },
+    "boton_modificar": {
+      "type": "string",
+      "default": "Modificar datos"
+    }
+  },
+  "config": {}
+}

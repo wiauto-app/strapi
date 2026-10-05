@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagina_tasadores",
+  "info": {
+    "singularName": "pagina-tasador",
+    "pluralName": "pagina-tasadores",
+    "displayName": "pagina tasador",
+    "description": "Landing del tasador de coches con IA"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "formulario": {
+      "type": "component",
+      "component": "tasador.formulario",
+      "repeatable": false
+    },
+    "aviso_privacidad": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": false
+    },
+    "como_funciona": {
+      "type": "component",
+      "component": "planes.caracteristicas",
+      "repeatable": false
+    },
+    "resultado": {
+      "type": "component",
+      "component": "tasador.resultado",
+      "repeatable": false
+    },
+    "opciones": {
+      "type": "component",
+      "component": "tasador.opciones",
+      "repeatable": false
+    },
+    "ofertas": {
+      "type": "component",
+      "component": "tasador.ofertas",
+      "repeatable": false
+    },
+    "confianza": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    }
+  }
+}

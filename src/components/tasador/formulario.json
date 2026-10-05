@@ -1,0 +1,96 @@
+{
+  "collectionName": "components_tasador_formularios",
+  "info": {
+    "displayName": "formulario",
+    "description": "Textos del formulario de tasación: vehículo y contacto"
+  },
+  "options": {},
+  "attributes": {
+    "encabezado_vehiculo": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "marca": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "modelo": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "anio": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "version": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "transmision": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "kilometraje": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "combustible": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "potencia": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "matricula": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "encabezado_contacto": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "nombre": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "apellidos": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "email": {
+      "type": "component",
+      "component": "formulario.campo",
+      "repeatable": false
+    },
+    "telefono": {
+      "type": "component",
+      "component": "formulario.campo-telefono",
+      "repeatable": false
+    },
+    "boton": {
+      "type": "component",
+      "component": "ui.boton",
+      "repeatable": false
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

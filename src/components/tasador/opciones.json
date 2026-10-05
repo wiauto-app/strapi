@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_tasador_opcioneses",
+  "info": {
+    "displayName": "opciones",
+    "description": "Bloque ¿Qué quieres hacer con tu coche?"
+  },
+  "options": {},
+  "attributes": {
+    "encabezado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "publicar": {
+      "type": "component",
+      "component": "tasador.opcion",
+      "repeatable": false
+    },
+    "recibir_ofertas": {
+      "type": "component",
+      "component": "tasador.opcion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

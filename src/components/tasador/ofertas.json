@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_tasador_ofertases",
+  "info": {
+    "displayName": "ofertas",
+    "description": "Textos del flujo de ofertas de concesionarios"
+  },
+  "options": {},
+  "attributes": {
+    "encabezado_enviado": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "enlace_ver_ofertas": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "encabezado_ofertas": {
+      "type": "component",
+      "component": "ui.encabezado",
+      "repeatable": false
+    },
+    "sin_ofertas": {
+      "type": "text",
+      "default": "Todavía no has recibido ofertas. Te avisaremos en cuanto un concesionario oferte."
+    },
+    "boton_aceptar": {
+      "type": "string",
+      "default": "Aceptar oferta"
+    },
+    "boton_rechazar": {
+      "type": "string",
+      "default": "Rechazar"
+    },
+    "confirmar_aceptar": {
+      "type": "text",
+      "default": "Al aceptar, compartiremos tus datos de contacto con este concesionario y el resto de ofertas se cerrarán."
+    },
+    "mensajes": {
+      "type": "component",
+      "component": "ui.mensajes-accion",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

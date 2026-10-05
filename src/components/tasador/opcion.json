@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_tasador_opciones",
+  "info": {
+    "displayName": "opcion",
+    "description": "Card de una opción tras tasar (publicar o recibir ofertas)"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "puntos": {
+      "type": "component",
+      "component": "shared.icon-feature",
+      "repeatable": true
+    },
+    "boton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
