@@ -55,6 +55,11 @@
       "type": "component",
       "component": "home.low-emisions",
       "repeatable": false
+    },
+    "servicios_extra": {
+      "type": "component",
+      "component": "shared.carta-ventaja",
+      "repeatable": true
     }
   }
 }

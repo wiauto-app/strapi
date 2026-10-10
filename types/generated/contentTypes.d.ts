@@ -789,6 +789,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     processSection: Schema.Attribute.Component<'home.process-section', false>;
     promocion_planes: Schema.Attribute.Component<'shared.hero', false>;
     publishedAt: Schema.Attribute.DateTime;
+    servicios_extra: Schema.Attribute.Component<'shared.carta-ventaja', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
